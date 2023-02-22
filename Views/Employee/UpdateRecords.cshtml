@@ -1,0 +1,36 @@
+@model Employee
+@{
+    ViewData["Title"] = "UpdateRecords";
+}
+<h1>UpdateRecords</h1>
+
+<form method="post">
+<p>
+    <label asp-for="EmployeeID"> Enter your ID </label>
+    <input asp-for="EmployeeID"placeholder="Employee ID" />
+</p>   
+
+<p>
+    <label asp-for="EmployeeName"> Enter your Name </label>
+    <input asp-for="EmployeeName" />
+</p> 
+
+<p>
+    <label asp-for="Age" > Enter your Age</label>
+    <input asp-for="Age" />
+</p> 
+
+<p>
+    <label asp-for="Salary" > Enter your Salary</label>
+    <input asp-for="Salary" />
+</p> 
+    <label asp-for="Department" >Your Department</label>
+    <select asp-for="Department" >
+        <option value="Developement" > Developement </option>
+        <option value="Research" > Research </option>
+        <option value="Testing" > Testing </option>
+    </select>        
+<div>
+    <button type="submit"> Submit </button>
+</div>
+</form>

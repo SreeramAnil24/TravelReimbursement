@@ -1,0 +1,55 @@
+
+body {
+	animation-name: backgroundColorPalette;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear; 
+	/* linear is enabled default, it’s not necessary to add it make it work but it can make your code more expressive */
+}
+
+@keyframes backgroundColorPalette {
+	0% {
+		background: #e41df1;
+	}
+	25% {
+		background: #aa1df1;
+	}
+	50% {
+		background: #771df1;
+	}
+	75% {
+		background: #5a1df1;
+	}
+	100% {
+		background: #271df1;
+	}
+}
+
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.nav-right{
+  margin-left:50rem;
+}

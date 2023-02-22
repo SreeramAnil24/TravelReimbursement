@@ -1,0 +1,43 @@
+﻿
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a {
+  color: #0077cc;
+}
+
+.btn-primary {
+  color: #1EAF1E;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+body {
+  background-image: url('https://global-uploads.webflow.com/5dd3ac2a77520f09d34aa5b0/5f2767f5e9697acdc2a9fefd_Travel%20Reimbursement.png');
+  margin: 0;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #1db4f1;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+

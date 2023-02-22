@@ -1,0 +1,14 @@
+@model Employee
+@{
+    ViewData["Title"]="Delete";
+}
+<h1 style="color: black;">Deletion</h1>
+<form method="post">
+<p>
+    <label asp-for="EmployeeName"> Enter Name</label>
+    <input asp-for="EmployeeName"placeholder="Employee Name"/>
+</p>
+<p>
+    <button type="Submit">Submit</button>
+</p>
+</form>
