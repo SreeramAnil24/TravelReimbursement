@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\EmpManage\\wwwroot\\image\\BG.jpg",
+      "PackagePath": "staticwebassets\\image\\BG.jpg"
+    },
+    {
+      "Id": "D:\\EmpManage\\wwwroot\\image\\download.png",
+      "PackagePath": "staticwebassets\\image\\download.png"
+    },
+    {
       "Id": "D:\\EmpManage\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

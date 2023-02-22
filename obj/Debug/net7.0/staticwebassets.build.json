@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EZ4UN82blvf7xb3krSpagQXKkEIhis75qIE6kfK6+nA=",
+  "Hash": "ZdGyHkibvJOjrgxJvdtMAap7V45T2qadUtLfaDd8XxI=",
   "Source": "webapp",
   "BasePath": "_content/webapp",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\EmpManage\\wwwroot\\image\\BG.jpg",
+      "SourceId": "webapp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\EmpManage\\wwwroot\\",
+      "BasePath": "_content/webapp",
+      "RelativePath": "image/BG.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\BG.jpg"
+    },
+    {
+      "Identity": "D:\\EmpManage\\wwwroot\\image\\download.png",
+      "SourceId": "webapp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\EmpManage\\wwwroot\\",
+      "BasePath": "_content/webapp",
+      "RelativePath": "image/download.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\download.png"
     },
     {
       "Identity": "D:\\EmpManage\\wwwroot\\js\\site.js",
