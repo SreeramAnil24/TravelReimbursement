@@ -1,6 +1,84 @@
 @model Employee
 @{
-    ViewData["Title"]="Create";
+    ViewData["Title"]="Login";
 }
 
-<h1>Login Page</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+button {
+  background-color: #8c26e7;
+  color: white;
+  padding: 5px 5px;
+  margin: 5px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 7%;
+  transition-duration: 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+  background-color: #1db4f1;
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 15%;
+  border-radius: 20%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+</style>
+</head>
+
+
+<h1 style="font-size:25px;text-align:center;">Sign-up</h1>
+<form method = "post">
+    <div class="imgcontainer">
+    <img src="https://cdn-icons-png.flaticon.com/512/8853/8853005.png" alt="Avatar" class="avatar">
+    </div>
+
+    <center>
+    <p>
+        <input asp-for="EmployeeID"placeholder="Employee ID"/>
+    </p>
+    <p>
+        <input asp-for="EmployeeName"placeholder="Employee Name"/>
+    </p>
+    <p>
+        <input asp-for="Age"placeholder="Age"/>
+    </p>
+    <p>
+        <input asp-for="Salary"placeholder="Salary"/>
+    </p>
+    <p>
+        <label asp-for="Department" Enter Department></label>
+        <select asp-for="Department">
+            <option value="Development">Development</option>
+            <option value="Testing">Testing</option>
+            <option value="HR">HR</option>
+            <option value="Research">Research</option>
+        </select>
+    </p>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+    </center>        
+</form>

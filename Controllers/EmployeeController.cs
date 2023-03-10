@@ -10,7 +10,7 @@ namespace EmpManage.Controllers
     {
         public IActionResult Index()
         {
-            return View(Repository.AllEmployees); 
+            return View(Repository.AllEmployees);  
         }
 
         [HttpGet]
@@ -19,6 +19,7 @@ namespace EmpManage.Controllers
             return View(); 
         }
 
+
         [HttpPost]
         public IActionResult Create(Employee employee)
         {
@@ -26,6 +27,22 @@ namespace EmpManage.Controllers
             return View("Thanks", employee); 
         }      
         
+         [HttpGet]
+        public IActionResult Login()
+        {
+            return View(); 
+        }
+
+
+        [HttpPost]
+        public IActionResult Login(Employee employee)
+        {
+            Repository.Create(employee);
+            return View("Thanks", employee); 
+        }      
+        
+
+
          [HttpGet]
         public IActionResult Delete()
         {
