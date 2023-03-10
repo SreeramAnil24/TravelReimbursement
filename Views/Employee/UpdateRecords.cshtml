@@ -1,31 +1,31 @@
-@model Employee
+@model NewEmployee
 @{
     ViewData["Title"] = "UpdateRecords";
 }
-<h1>UpdateRecords</h1>
+<h1>New Reimbursement</h1>
 
 <form method="post">
 <p>
-    <label asp-for="EmployeeID"> Enter your ID </label>
-    <input asp-for="EmployeeID"placeholder="Employee ID" />
+    <label asp-for="employeeID"> Enter your ID </label>
+    <input asp-for="employeeID"placeholder="Employee ID" />
 </p>   
 
 <p>
-    <label asp-for="EmployeeName"> Enter your Name </label>
-    <input asp-for="EmployeeName" />
+    <label asp-for="employeeName"> Enter your Name </label>
+    <input asp-for="employeeName" />
 </p> 
 
 <p>
-    <label asp-for="Age" > Enter your Age</label>
-    <input asp-for="Age" />
+    <label asp-for="age" > Enter your Age</label>
+    <input asp-for="age" />
 </p> 
 
 <p>
-    <label asp-for="Salary" > Enter your Salary</label>
-    <input asp-for="Salary" />
+    <label asp-for="salary" > Enter your Salary</label>
+    <input asp-for="salary" />
 </p> 
-    <label asp-for="Department" >Your Department</label>
-    <select asp-for="Department" >
+    <label asp-for="department" >Your Department</label>
+    <select asp-for="department" >
         <option value="Developement" > Developement </option>
         <option value="Research" > Research </option>
         <option value="Testing" > Testing </option>

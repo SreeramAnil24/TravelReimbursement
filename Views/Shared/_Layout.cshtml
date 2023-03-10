@@ -14,9 +14,9 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom ">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark ">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><!--<p style="font-family:'Cookie', cursive;font-size:25px">TravelGuide</p>--><img src="https://i.pinimg.com/736x/87/ac/a2/87aca22d8b5b52713c954e041d0e8e51.jpg" width="40" height="40"></a>
+                <a class="navbar-brand" asp-area="" asp-controller="Employee" asp-action="toCreate"><!--<p style="font-family:'Cookie', cursive;font-size:25px">TravelGuide</p>--><img src="https://cdn-icons-png.flaticon.com/512/9610/9610723.png" width="40" height="40"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,26 +24,26 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy" style ="font-family: 'Poppins', sans-serif; font-size:18px" >Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Employee" asp-action="Index">Details</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Employee" asp-action="hasIndex">Details</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link text-white"  asp-area="" asp-controller="employee" asp-action="Delete">Deletion</a>
+                            <a class="nav-link text-white"  asp-area="" asp-controller="employee" asp-action="Dashboard">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="employee" asp-action="UpdateRecords">UpdateRecords</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="employee" asp-action="NewTravel">New Travel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="employee" asp-action="Reimbursement">New Reimbursement</a>
                         </li>
                         <li class="nav-item nav-right"  >
-                            <a class="nav-link text-white" asp-area="" asp-controller="Employee" asp-action="Create" ><img src="https://cdn-icons-png.flaticon.com/512/7817/7817039.png" width="27" height="27"></a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Employee" asp-action="toCreate" ><img src="https://cdn-icons-png.flaticon.com/512/8750/8750952.png" width="40" height="40"></a>
                         </li>
                         <li class="nav-item"  >
-                            <a class="nav-link text-white" asp-area="" asp-controller="Employee" asp-action="Login" ><img src="https://cdn-icons-png.flaticon.com/512/9283/9283235.png" width="35" height="35"></a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Employee" asp-action="toLogin" ><img src="https://cdn-icons-png.flaticon.com/512/9546/9546423.png" width="38" height="38"></a>
                         </li>
                     </ul>
                 </div>

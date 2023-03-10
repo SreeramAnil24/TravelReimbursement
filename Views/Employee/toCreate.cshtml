@@ -1,0 +1,107 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+@model NewEmployee
+@{
+    ViewData["Title"]="toCreate";
+}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.login{
+    width: 20em;
+    height: 30em;
+    background-color: rgb(31, 30, 30);
+    border-color: black;
+    border-radius: 3em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+   box-shadow: 20px 20px 50px black;
+
+}
+
+button {
+  background-color: #26bae7;
+  color: white;
+  padding: 5px 5px;
+  margin: 5px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 50%;
+  transition-duration: 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+  background-color: #1df14b;
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 45%;
+  border-radius: 45%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+</style>
+</head>
+
+
+<h1 style="font-size:40px;text-align:center;font-family: 'Rancho', cursive;">Sign Up.</h1>
+<form method = "post">
+    <div class="login">
+        <div class="imgcontainer">
+        <img src="https://cdn-icons-png.flaticon.com/512/8853/8853005.png" alt="Avatar" class="avatar">
+        </div>
+
+        <center>
+      
+        <p>
+            <input asp-for="employeeID"placeholder="Employee ID"/>
+        </p>
+        <p>
+            <input asp-for="employeeName"placeholder="Employee Name"/>
+        </p>
+        <p>
+          <input placeholder="password" type="password" name="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        </p>
+        <p>
+            <input asp-for="age"placeholder="Age"/>
+        </p>
+        <p>
+            <input asp-for="salary"placeholder="Salary"/>
+        </p>
+        
+        <p>
+            <select asp-for="department">
+                <option value="Development">Development</option>
+                <option value="Testing">Testing</option>
+                <option value="HR">HR</option>
+                <option value="Research">Research</option>
+            </select>
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </div>
+    </center>        
+</form>

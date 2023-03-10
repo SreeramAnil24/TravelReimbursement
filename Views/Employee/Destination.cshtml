@@ -1,0 +1,118 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+
+@model NewEmployee
+@{
+    ViewData["Title"]="Destination";
+}
+
+<!--<a asp-action="Index">View all Employees</a>
+<h3 style=color:blue>Thanks for Registering</h3>-->
+
+<!DOCTYPE html>
+<html>
+<style>
+.containerbox{
+  width: 50em;
+  height: 18em;
+  background-color: rgb(31, 30, 30);
+  border-color: black;
+  border-radius: 3em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  box-shadow: 20px 20px 50px black;
+   
+}
+
+.top{
+  margin-bottom: 75px;
+}
+
+button {
+  background-color: #24cee4;
+  color: white;
+  padding: 5px 10px;
+  margin: 5px 35px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  width: 50%;
+  transition-duration: 0.2s;
+}
+   .boxfunc{
+    width: 500px;
+    height: 150px;
+    background-color: rgb(31, 30, 30);
+    border-radius: 1em;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 20px 20px 30px black;  
+
+}
+button:hover {
+  opacity: 1;
+  background-color: #1df16e;
+}
+
+</style>
+<body>
+    <form method="post">
+        <div class="containerbox">
+          <img src="https://cdn-icons-png.flaticon.com/512/7585/7585979.png" width="50" height="50">
+              <br>
+              <br>
+              <h4 style="color:white; font-family: 'Gloock', serif; font-size:30px">Enter Your Destination:</h4>
+              <p> 
+                <label style="color:white">Travel No:</label>
+                <input name="travelNo" type="number" min="1" max="100">
+                <select name="toDestination">
+                    <option value="Chennai">Chennai</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="Kochi">Kochi</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Gdansk">Gdansk</option>
+                    <option value="Puebla">Puebla</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="California">California</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="London">London</option>
+                    <option value="Utrecht">Utrecht</option>
+                    <option value="Saudi">Saudi</option>
+                    <option value="Dubai">Dubai</option>
+                </select>
+                  
+
+                  <label style="color:white">Number of Days:</label>
+                  <input name="noofDays" type="number" min="1" max="100">
+              </p>
+              <p>
+                  <select name="mediumofTravel">
+                    <option value="Flight">Flight</option>
+                    <option value="Train">Train</option>
+                    <option value="Bus">Bus</option>
+                </select>
+
+                <input name="dateofTravel" type = "Date" placeholder="Date"/>
+              </p>
+
+
+              <p>
+                  <button asp-controller="Employee" asp-action="Destination" type="submit">Submit</button>
+                  
+              </p>
+          </div>
+      </form>
+         
+</body>
+</html>
+
+

@@ -9,69 +9,89 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = webapp
 build_property.RootNamespace = webapp
-build_property.ProjectDir = D:\EmpManage\
+build_property.ProjectDir = D:\TravelReimbursement\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\EmpManage
+build_property.MSBuildProjectDirectory = D:\TravelReimbursement
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/EmpManage/Views/Employee/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
+[D:/TravelReimbursement/Views/Employee/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/Employee/delete.cshtml]
+[D:/TravelReimbursement/Views/Employee/delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcZGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/Employee/deletetionsuccessfull.cshtml]
+[D:/TravelReimbursement/Views/Employee/deletetionsuccessfull.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcZGVsZXRldGlvbnN1Y2Nlc3NmdWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/Employee/Index.cshtml]
+[D:/TravelReimbursement/Views/Employee/Destination.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGVzdGluYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TravelReimbursement/Views/Employee/Documents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRG9jdW1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TravelReimbursement/Views/Employee/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/Employee/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcTG9naW4uY3NodG1s
+[D:/TravelReimbursement/Views/Employee/NewTravel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcTmV3VHJhdmVsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/Employee/success.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcc3VjY2Vzcy5jc2h0bWw=
+[D:/TravelReimbursement/Views/Employee/Reimbursement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcUmVpbWJ1cnNlbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/Employee/Thanks.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcVGhhbmtzLmNzaHRtbA==
+[D:/TravelReimbursement/Views/Employee/ToandFrom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcVG9hbmRGcm9tLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/Employee/UpdateRecords.cshtml]
+[D:/TravelReimbursement/Views/Employee/toCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcdG9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TravelReimbursement/Views/Employee/toLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcdG9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TravelReimbursement/Views/Employee/TravelDocuments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcVHJhdmVsRG9jdW1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TravelReimbursement/Views/Employee/UpdateRecords.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcVXBkYXRlUmVjb3Jkcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/Home/Index.cshtml]
+[D:/TravelReimbursement/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/Home/Privacy.cshtml]
+[D:/TravelReimbursement/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/Shared/Error.cshtml]
+[D:/TravelReimbursement/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/TravelReimbursement/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/_ViewImports.cshtml]
+[D:/TravelReimbursement/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/_ViewStart.cshtml]
+[D:/TravelReimbursement/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/EmpManage/Views/Shared/_Layout.cshtml]
+[D:/TravelReimbursement/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-j4i5us2apt

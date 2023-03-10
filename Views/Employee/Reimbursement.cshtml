@@ -1,0 +1,118 @@
+@model NewEmployee
+@{
+    ViewData["Title"]="Reimbursement";
+}
+<!DOCTYPE html>
+<html>
+
+<style>
+:root{
+  --blueColor: #55b6b2;
+  --grayColor: #f8f8f6;
+  --whiteColor: #fff;
+  --blackColor: #1b2a39;
+}
+body{
+  background-color: var(--grayColor);
+  font-family: Helvetica;
+  color: var(--blackColor);
+  font-size: 14px;
+}
+*{
+  box-sizing: border-box; 
+}
+
+.main{
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+  background-color: var(--whiteColor);
+  padding: 20px;
+  border-radius: 4px;
+}
+
+button,
+input[type="submit"]{
+  background-color: var(--blueColor);
+  border:2px solid var(--blueColor);
+  padding:10px 15px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+form{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+form input{
+  flex: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.table-responsive{
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 10px;
+}
+.expense-data {
+  width: 100%;
+  border-spacing: 0;
+}
+th{
+  background-color: var(--blueColor);
+  padding:10px 5px;
+  color: #fff;
+  text-align: left;
+}
+
+</style>
+
+<main class="main">
+  <form method="post">
+    <p>
+      <label></label>
+      <input name="expense" type="text" placeholder="Expense Reason">
+      <input name="expdate" type="Date" placeholder="Date">
+      <input name="cost" type="number" placeholder="Enter Amount" min="1" max="10000000">
+      <select name="currency">
+          <option value="INR">Rupee</option>
+          <option value="PLN">Polish zloty</option>
+          <option value="MXN">Mexican Peso</option>
+          <option value="SGD">Singapore Dollar</option>
+          <option value="USD">American Dollar</option>
+          <option value="GBR">Pounds</option>
+          <option value="EUR">Euro</option>
+          <option value="SAR">Saudi Dirham</option>
+          <option value="AED">Dubai Dinar</option>
+      </select>
+    
+      <button asp-controller="Employee" asp-action="Reimbursement" type="submit">Submit</button>
+                  
+    </p> 
+  </form>
+
+  <div class="table-responsive">
+    <table class="expense-data">
+      <tbody>
+        <tr>
+          <th></th>
+          <th>Expense Name</th>
+          <th>Amount</th>
+          <th>Currency</th>
+          <th>Date</th>
+          <th>Approval</th>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</main>
+</html>

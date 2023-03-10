@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\EmpManage\\webapp.csproj": {}
+    "D:\\TravelReimbursement\\webapp.csproj": {}
   },
   "projects": {
-    "D:\\EmpManage\\webapp.csproj": {
+    "D:\\TravelReimbursement\\webapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EmpManage\\webapp.csproj",
+        "projectUniqueName": "D:\\TravelReimbursement\\webapp.csproj",
         "projectName": "webapp",
-        "projectPath": "D:\\EmpManage\\webapp.csproj",
+        "projectPath": "D:\\TravelReimbursement\\webapp.csproj",
         "packagesPath": "C:\\Users\\sreeram.anil\\.nuget\\packages\\",
-        "outputPath": "D:\\EmpManage\\obj\\",
+        "outputPath": "D:\\TravelReimbursement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sreeram.anil\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,0 +1,255 @@
+@* <!DOCTYPE html>
+<html lang="en">
+@model NewEmployee
+@{
+    ViewData["Title"]="New Reimbursement";
+}
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+
+	<style>
+
+		body {
+			background-color: #05c46b;
+			font-family: Verdana;
+			text-align: center;
+		}
+
+		form {
+			background-color: rgb(31, 30, 30);
+			max-width: 1000px;
+			margin: 50px auto;
+			padding: 30px 20px;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		.shortform {
+			background-color: rgb(31, 30, 30);
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 30px 20px;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+
+
+		.form-control {
+			text-align: left;
+			margin-bottom: 25px;
+		}
+
+
+		.form-control label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		.form-control input,
+		.form-control select,
+		.form-control textarea {
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			padding: 10px;
+			display: block;
+			width: 95%;
+		}
+
+		.form-control input[type="radio"],
+		.form-control input[type="checkbox"] {
+			display: inline-block;
+			width: auto;
+		}
+
+
+		button {
+			background-color: #05c46b;
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			font-size: 21px;
+			display: block;
+			width: 100%;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Add a new Reimbursement:</h1>
+
+	<form id="form">
+
+	<div class="row">
+		<div class="shortform">
+			<label>Name:</label>
+         <input asp-for="employeeName"placeholder="Employee name"/>
+		</div>
+
+		<div class="form-control">
+		    <label>Employee ID:</label>
+         <input asp-for="employeeID"placeholder="Employee ID"/>
+		</div>
+
+		<div class="form-control">
+		    <label>Travelling To:</label>
+         <input asp-for="toDestination"placeholder="Destination"/>
+		</div>
+	</div>
+		
+
+		<button type="submit" value="submit">
+			Submit
+		</button>
+	</form>
+</body>
+
+</html> *@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+<style>
+.boxfunc{
+    width: 1300px;
+    height: 500px;
+    background-color: rgb(235, 226, 226);
+    border-radius: 1em;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -100px;
+    margin-right: auto;
+    box-shadow: 20px 20px 30px black;  
+
+}
+
+
+button {
+  background-color: #26bae7;
+  color: white;
+  padding: 5px 5px;
+  margin: 50px 580px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 10%;
+  transition-duration: 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+  background-color: #1df14b;
+}
+</style>
+<div class="container">
+  <form>
+    <br>
+	<div class="boxfunc">
+		<h2 style="text-align:center;color:rgb(39, 38, 38); font-family: 'Gloock', serif; font-size:30px">New Travel:</h2>
+
+		<br>
+		<div class="row">
+
+		<div class="col-md-1" style="margin:0 auto;" >
+			<div class="form-group">
+			<label for="travelNo">Travel No:</label>
+			<input type="text" class="form-control" placeholder="Travel No:">
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin:0 auto;" >
+			<div class="form-group">
+			<label for="employeeName">Employee Name:</label>
+			<input type="text" class="form-control" placeholder="Employee Name">
+			</div>
+		</div>
+		
+
+
+		<div class="col-md-3" style="margin:0 auto;">
+			<div class="form-group">
+			<label for="employeeID">Employee ID:</label>
+			<input type="text" class ="form-control" placeholder="Employee ID">
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin:0 auto;">
+			<div class="form-group">
+			<label for="passno">Passport Number:</label>
+			<input type="text" class="form-control" placeholder="Passport Number">
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin:0 auto;">
+			<div class="form-group">
+			<label for="pan">PAN Number:</label>
+			<input type="text" class="form-control" placeholder="PAN Number">
+			</div>
+		</div>
+	
+    </div>
+
+	<br>
+
+    <div class="row">
+      	<div class="col-md-2" style="margin:0 auto;">
+			<div class="form-group">
+			<label for="toDestination">Destination:</label>
+			<input type="text" class="form-control" placeholder="Destination">
+			</div>
+		</div>
+
+      	<div class="col-md-2" style="margin:0 auto;">
+			<div class="form-group">
+			<label for="noofDays">No of Days:</label>
+			<input type="text" class="form-control" placeholder="Number of Days">
+			</div>
+	    </div>
+
+		<div class="col-md-2" style="margin:0 auto;">
+			<div class="form-group">
+			<label for="mediumofTravel">Medium of Travel:</label>
+			<input type="text" class="form-control" placeholder="Medium of Travel">
+			</div>
+	    </div>
+
+		<div class="col-md-2" style="margin:0 auto;">
+			<div class="form-group">
+			<label for="noofDays">Date of Travel:</label>
+			<input type="date" class="form-control" placeholder="Date">
+			</div>
+	    </div>
+
+
+
+    </div>
+
+	<br>
+    <div class="row">
+
+      	<div class="col-md-3" style="margin:0 auto;">
+			<div class="form-group">
+			<label for="noofDays">Document upload:</label>
+			<input type="file" class="form-control" placeholder="">
+			</div>
+	    </div>
+
+
+		<div class="col-md-3" style="margin:0 auto;">
+			<div class="form-group">
+			<label for="Project">Travel Project:</label>
+			<input type="text" class="form-control" placeholder="Travel Project">
+			</div>
+	    </div>
+
+
+    </div>
+
+
+    <button type="submit" class="button">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,66 @@
+
+@model NewEmployee
+@{
+    ViewData["Title"]="TravelDocuments";
+}
+
+<!--<a asp-action="Index">View all Employees</a>
+<h3 style=color:blue>Thanks for Registering</h3>-->
+
+<!DOCTYPE html>
+<html>
+<style>
+.containerbox{
+  width: 30em;
+  height: 18em;
+  background-color: rgb(31, 30, 30);
+  border-color: black;
+  border-radius: 3em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  box-shadow: 20px 20px 50px black;
+   
+}
+
+.top{
+  margin-bottom: 75px;
+}
+
+button {
+  background-color: #24cee4;
+  color: white;
+  padding: 5px 5px;
+  margin: 5px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  width: 25%;
+  transition-duration: 0.2s;
+}
+
+button:hover {
+  opacity: 1;
+  background-color: #1df16e;
+}
+
+</style>
+<body>
+<!--<center><h2 style > Welcome, @Model.employeeName </h2></center>-->
+<div class="containerbox">
+    <p class="top" style="color:white; font-family: 'Gloock', serif; font-size:30px">Travel Documents</p>
+    <center>
+    <form action="/action_page.php">
+      <input type="file" id="myFile" name="filename">
+      <button type="submit" asp-area="" asp-controller="Employee" asp-action="destination">Upload</button>
+    </form>
+    </center>
+</div>
+</body>
+</html>
+
+
