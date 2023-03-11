@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\TravelReimbursement
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/TravelReimbursement/Views/Employee/AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRtaW5EYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TravelReimbursement/Views/Employee/AdminLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRtaW5Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/TravelReimbursement/Views/Employee/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -78,6 +86,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/TravelReimbursement/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TravelReimbursement/Views/Shared/_Layoutnoicons.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRub2ljb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/TravelReimbursement/Views/Shared/_ValidationScriptsPartial.cshtml]

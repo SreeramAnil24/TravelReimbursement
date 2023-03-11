@@ -3,13 +3,39 @@
         ViewData["Title"] = "Index";
     }
 
+<html>
+<head>
+<style>
+    .button {
+           display: block;
+            margin-left: 9em;
+            background-color: white;
+            height: 2em;
+            width: 5em;
+            border-radius: 1em;
+            margin-left: 20%;
+            margin-top: 10%;
+            color: black;
+            cursor: pointer;
+            margin-left: 25%;
+            text-decoration: none;
+            margin-top: 5%;
+    }
 
+     a:hover {
+  text-decoration: none;
+  color: initial;
+  cursor: initial;
+} 
+</style>
+</head>
 <h1>List of Employee</h1>
-<table>
+<table style="margin-left: -10%;width: 120% ;background-color: whitesmoke;" border=2>
     <thead>
         <tr>
-            <th>EmployeeID</th>
-            <th>EmployeeName</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Password</th>
             <th>Age</th>
             <th>Salary</th>
             <th>Department</th>
@@ -19,8 +45,11 @@
         @foreach (NewEmployee item in Model)
         {
             <tr>
+                
                 <td>@item.employeeID</td>
                 <td>@item.employeeName</td>
+                <td>@item.password</td>
+                
                 <td>@item.age</td>
                 <td>@item.salary</td>
                 <td>@item.department</td>
@@ -28,3 +57,6 @@
         }
     </tbody>
 </table>
+<br>
+@* <a asp-asp-controller="Admin" asp-action="Options"  class="btn btn-primary">Go Back To Options</a> *@
+<a asp-controller="Admin" asp-action="Options" class="button">Go Back To Options</a>

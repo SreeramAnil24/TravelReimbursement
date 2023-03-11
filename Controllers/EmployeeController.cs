@@ -28,6 +28,19 @@ namespace EmpManage.Controllers
         }      
         
         [HttpGet]
+        public IActionResult AdminLogin()
+        {
+            return View(); 
+        }
+
+        [HttpPost]
+        public IActionResult AdminLogin(NewEmployee employee)
+        {   
+
+            return View("AdminDashboard", employee); 
+        }  
+
+        [HttpGet]
         public IActionResult toLogin()
         {
             return View(); 
@@ -36,17 +49,23 @@ namespace EmpManage.Controllers
         [HttpPost]
         public IActionResult toLogin(NewEmployee employee)
         {
-            string?  a = Repository.isValidUser(employee);
-            if(a!="novalue")
-            {
-                ViewBag.message=a;
-                return View("Dashboard");
-            }
+            // string?  a = Repository.isValidUser(employee);
+            // if(a!="novalue")
+            // {
+            //     ViewBag.message=a;
+            //     return View("Dashboard");
+            // }
                 
-            else
+            // else
                 return View("Login"); 
         }      
         
+        [HttpGet]
+        public IActionResult AdminDashboard()
+        {
+            return View(); 
+        }
+
 
  
  
@@ -105,6 +124,12 @@ namespace EmpManage.Controllers
             return View(); 
         }
 
+        [HttpGet]
+        public IActionResult Index()
+        {   
+
+            return View(); 
+        }
       
 
 

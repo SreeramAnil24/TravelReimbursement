@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
 @model NewEmployee
 @{
-    ViewData["Title"]="Login";
+    ViewData["Title"]="Admin Login";
 }
 
 
@@ -11,7 +11,6 @@
 <html>
 <head>
 <style>
-
 
 .login{
     width: 15em;
@@ -77,13 +76,13 @@ span.psw {
 </head>
 
 
-<h1 style="font-size:40px;text-align:center;font-family: 'Rancho', cursive;">User Login</h1>
+<h1 style="font-size:40px;text-align:center;font-family: 'Rancho', cursive;"> Admin Login</h1>
 <form method = "post">
-  <p>
-  <a style="display:block; margin:auto;" asp-controller= "Employee" asp-action="AdminLogin" >Admin</a>
-                  
-  </p>  
   <div class="login">
+    <p>
+        <a style="display:block; margin:auto;" asp-controller= "Employee" asp-action="toLogin" >User</a>
+                    
+    </p>
     <div class="imgcontainer">
     <img src="https://cdn-icons-png.flaticon.com/512/8853/8853005.png" alt="Avatar" class="avatar">
     </div>
