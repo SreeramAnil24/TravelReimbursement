@@ -57,12 +57,12 @@ namespace EmpManage.Models
             return userdatas;       
         }
         
-           public static DataTable displayExpenseDetails()
+        public static DataTable displayExpenseDetails()
         {
             SqlConnection connection=new SqlConnection("Data Source=ASPIRE1879\\SQLEXPRESS;Initial Catalog=userDetails;Integrated Security=SSPI");
             DataTable userdatas=new DataTable();
             try{
-                SqlDataAdapter dataadapter=new SqlDataAdapter($"select * from expenseTable",connection);
+                SqlDataAdapter dataadapter=new SqlDataAdapter($"select * from expTable",connection);
                 dataadapter.Fill(userdatas);
             }
             catch(Exception exception){

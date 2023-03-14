@@ -1,0 +1,61 @@
+@using System.Data;
+@model System.Data.DataTable;
+<style>
+    .boxfunc{
+    width: 1300px;
+    height: 500px;
+    background-color: rgb(235, 226, 226);
+    border-radius: 1em;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 20px 20px 30px black;  
+
+}
+
+h3{
+    text-align: center;
+}
+</style>
+
+
+<body>
+    <div class="boxfunc">
+        <table style="width:100%" border=2>
+                    <h3> Employee Details </h3>
+                    <thead>
+                        <tr>
+                            <th> Employee ID &emsp; </th>
+                            <th> Employee Name &emsp; </th>
+                            <th> Age &emsp; </th>
+                            <th> Salary &emsp; </th>
+                            <th> Department </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+
+                            foreach (DataRow datarow in Model.Rows)
+                            {
+                                
+                                <tr>
+                                    <td>@datarow[0] &emsp; </td>
+                                    <td>@datarow[1] &emsp; </td>
+                                    <td>@datarow[3] &emsp; </td>
+                                    <td>@datarow[4] &emsp; </td>
+                                    <td>@datarow[5] &emsp; </td>
+                                </tr>
+                            }
+    
+                        }
+                        </tbody>
+                </table>            
+    </div>
+    <div class="container">
+        <a button asp-controller="Employee" asp-action="AdminDashboard" type="submit">Go back</button></a>    
+    </div>
+
+    
+</body>

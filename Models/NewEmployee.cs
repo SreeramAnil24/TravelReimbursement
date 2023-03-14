@@ -16,7 +16,8 @@ namespace EmpManage.Models
         public string? mediumofTravel{get; set;}
         public int travelNo{get; set;}
         public string? dateofTravel{get; set;}
-        public int noofDays{get; set;}
+        public string? returnDate{get; set;}
+        public string? projectName{get; set;}
 
 
 

@@ -1,7 +1,10 @@
-@model NewEmployee
-@{
-    ViewData["Title"]="Reimbursement";
-}
+@using System.Data;
+@model System.Data.DataTable;
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+
 <!DOCTYPE html>
 <html>
 
@@ -73,46 +76,109 @@ th{
   text-align: left;
 }
 
+.boxfunc{
+    width: 900px;
+    height: 500px;
+    background-color: rgb(31, 29, 29);
+    border-radius: 2em;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 20px 20px 30px black;  
+
+}
+
+button {
+  background-color: #24cee4;
+  color: white;
+  padding: 5px 5px;
+  margin: 5px 380px;
+  border: none;
+  cursor: pointer;
+  align: center;
+  border-radius: 20px;
+  width: 15%;
+  transition-duration: 0.2s;
+}
+
+button:hover {
+  opacity: 1;
+  background-color: #1df16e;
+}
+
 </style>
+@{
+    Layout = "~/Views/Shared/_Layoutnoicons.cshtml";
+}
+<br>
+<br>
+<br>
+<div class="boxfunc">
+  <br>
+  <br>
+    <h2 style="text-align:center;color:rgb(255, 255, 255); font-family: 'Gloock', serif; font-size:30px">Apply for a Reimbursement:<img src="https://cdn-icons-png.flaticon.com/512/2856/2856947.png" width="50" height="50"></h2>
+    <main class="main">
+      <form method="post">
+        <p>
+          
+          <label></label>
+          <input name="expNo" type="number" placeholder="Expense Number">
 
-<main class="main">
-  <form method="post">
-    <p>
-      <label></label>
-      <input name="expense" type="text" placeholder="Expense Reason">
-      <input name="expdate" type="Date" placeholder="Date">
-      <input name="cost" type="number" placeholder="Enter Amount" min="1" max="10000000">
-      <select name="currency">
-          <option value="INR">Rupee</option>
-          <option value="PLN">Polish zloty</option>
-          <option value="MXN">Mexican Peso</option>
-          <option value="SGD">Singapore Dollar</option>
-          <option value="USD">American Dollar</option>
-          <option value="GBR">Pounds</option>
-          <option value="EUR">Euro</option>
-          <option value="SAR">Saudi Dirham</option>
-          <option value="AED">Dubai Dinar</option>
-      </select>
-    
-      <button asp-controller="Employee" asp-action="Reimbursement" type="submit">Submit</button>
-                  
-    </p> 
-  </form>
-
-  <div class="table-responsive">
-    <table class="expense-data">
-      <tbody>
-        <tr>
-          <th></th>
-          <th>Expense Name</th>
-          <th>Amount</th>
-          <th>Currency</th>
-          <th>Date</th>
-          <th>Approval</th>
-        </tr>
+          <input name="expense" type="text" placeholder="Expense Reason">
+          <input name="expdate" type="Date" placeholder="Date">
+          <input name="cost" type="number" placeholder="Enter Amount" min="1" max="10000000">
+          <select name="currency">
+              <option value="INR">Rupee</option>
+              <option value="PLN">Polish zloty</option>
+              <option value="MXN">Mexican Peso</option>
+              <option value="SGD">Singapore Dollar</option>
+              <option value="USD">American Dollar</option>
+              <option value="GBR">Pounds</option>
+              <option value="EUR">Euro</option>
+              <option value="SAR">Saudi Dirham</option>
+              <option value="AED">Dubai Dinar</option>
+          </select>
         
-      </tbody>
-    </table>
+          <button asp-controller="Employee" asp-action="Reimbursement" type="submit">Submit</button>
+                      
+        </p> 
+      </form>
+
+      <div class="table-responsive">
+        <table class="expense-data">
+          <tr>
+            <th>Expense No</th>
+            <th>Expense Name</th>
+            <th>Amount</th>
+            <th>Currency</th>
+            <th>Date</th>
+            <th>Approval </th>
+          </tr>
+          <tbody>
+            @{
+
+                foreach (DataRow datarow in Model.Rows)
+                {
+                    
+                    <tr>
+                        <td>@datarow[0] &emsp; </td>
+                        <td>@datarow[1] &emsp; </td>
+                        <td>@datarow[3] &emsp; </td>
+                        <td>@datarow[4] &emsp; </td>
+                        <td>@datarow[2] &emsp; </td>
+                        <td>@datarow[5] &emsp; </td>
+                    </tr>
+                }
+
+            }
+            </tbody>
+
+        </table>
+      </div>
+    </main>
+    <a button asp-controller="Employee" asp-action="Dashboard" type="submit">Submit Requests</button></a>
+
   </div>
-</main>
 </html>

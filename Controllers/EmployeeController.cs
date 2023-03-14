@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using EmpManage.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 
 namespace EmpManage.Controllers
 {
@@ -27,6 +28,7 @@ namespace EmpManage.Controllers
             return View("Destination", employee); 
         }      
         
+
         [HttpGet]
         public IActionResult AdminLogin()
         {
@@ -40,6 +42,8 @@ namespace EmpManage.Controllers
             return View("AdminDashboard", employee); 
         }  
 
+
+
         [HttpGet]
         public IActionResult toLogin()
         {
@@ -49,32 +53,42 @@ namespace EmpManage.Controllers
         [HttpPost]
         public IActionResult toLogin(NewEmployee employee)
         {
-            // string?  a = Repository.isValidUser(employee);
-            // if(a!="novalue")
-            // {
-            //     ViewBag.message=a;
-            //     return View("Dashboard");
-            // }
+            string?  a = Repository.isValidUser(employee);
+            if(a!="novalue")
+            {
+                ViewBag.message=a;
+                // HttpContext.Session.SetString("employeeID",employee.employeeID);
+                return View("Destination");
+            }
                 
-            // else
-                return View("Login"); 
+            else
+                return View("toLogin"); 
         }      
+        
+
         
         [HttpGet]
         public IActionResult AdminDashboard()
         {
             return View(); 
         }
+        
+        public IActionResult EmployeeDetails()
+        {   
+            DataTable employeedetails=Repository.displayUserDetails();
+            return View("EmployeeDetails",employeedetails);
+        }
 
-
- 
- 
+        public IActionResult ApproveReimbursements()
+        {   
+            DataTable employeedetails=Repository.displayExpenseDetails();
+            return View("ApproveReimbursements",employeedetails);
+        }
 
 
         [HttpGet]
         public IActionResult Dashboard()
         {   
-
             return View(); 
         }
 
@@ -97,47 +111,54 @@ namespace EmpManage.Controllers
         public IActionResult Destination(NewEmployee travel)
         {   
             TravelDB.addTravel(travel);
-            return View("Reimbursement", travel); 
+            return View("Reimbursement"); 
             
         }      
 
         [HttpGet]
         public IActionResult Reimbursement()
         {   
-
-            return View(); 
+            DataTable temp=Repository.displayExpenseDetails();
+            
+            return View("Reimbursement",temp);
         }
         
         [HttpPost]
         public IActionResult Reimbursement(NewEmployee travel)
         {   
             TravelDB.addExpense(travel);
-            return View("Reimbursement", travel);     
-        }  
+            DataTable temp=Repository.displayExpenseDetails();
+            
+            return View("Reimbursement",temp);
+        } 
 
 
 
         [HttpGet]
         public IActionResult NewTravel()
         {   
-
             return View(); 
         }
+
+       
+       
+
+
+
+
+
+
+
+
+
 
         [HttpGet]
         public IActionResult Index()
         {   
-
             return View(); 
         }
-      
+        
 
-
-        
-        
-        
-        
-        
         [HttpGet]
         public IActionResult toDelete()
         {
@@ -150,20 +171,6 @@ namespace EmpManage.Controllers
             Repository.delete(EmployeeName);
             return View("deletetionsuccessfull");
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //     [HttpGet]
     //      public IActionResult toUpdateRecords()

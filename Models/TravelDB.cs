@@ -20,7 +20,7 @@ namespace EmpManage.Models
         {
             try{
                 using(SqlConnection connection=new SqlConnection("Data Source=ASPIRE1879\\SQLEXPRESS;Initial Catalog=userDetails;Integrated Security=SSPI")){
-                    SqlCommand command=new SqlCommand($"insert into travelTable values('{Convert.ToString(travel.travelNo)}','{Convert.ToString(travel.toDestination)}','{Convert.ToString(travel.mediumofTravel)}','{Convert.ToString(travel.dateofTravel)}','{Convert.ToString(travel.noofDays)}')",connection);
+                    SqlCommand command=new SqlCommand($"insert into travelTable values('{Convert.ToString(travel.employeeID)}','{Convert.ToString(travel.travelNo)}','{Convert.ToString(travel.toDestination)}','{Convert.ToString(travel.mediumofTravel)}','{Convert.ToString(travel.dateofTravel)}','{Convert.ToString(travel.returnDate)}','{Convert.ToString(travel.projectName)}')",connection);
                     connection.Open();
                     command.ExecuteNonQuery();
                 }
@@ -35,7 +35,8 @@ namespace EmpManage.Models
             try{
                 using(SqlConnection connection=new SqlConnection("Data Source=ASPIRE1879\\SQLEXPRESS;Initial Catalog=userDetails;Integrated Security=SSPI"))
                 {
-                    SqlCommand command=new SqlCommand($"insert into expenseTable values('{Convert.ToString(travel.expNo)}','{Convert.ToString(travel.expense)}','{Convert.ToString(travel.expdate)}','{Convert.ToString(travel.cost)}','{Convert.ToString(travel.currency)}')",connection);
+                    SqlCommand command=new SqlCommand($"insert into expTable values('{Convert.ToString(travel.expNo)}','{Convert.ToString(travel.expense)}','{Convert.ToString(travel.expdate)}','{Convert.ToString(travel.cost)}','{Convert.ToString(travel.currency)}', 'pending')",connection);
+                    
                     connection.Open();
                     command.ExecuteNonQuery();
                 }
@@ -44,6 +45,7 @@ namespace EmpManage.Models
                 Console.WriteLine(exception.Message);
             }
         }
+        
 
 
     
