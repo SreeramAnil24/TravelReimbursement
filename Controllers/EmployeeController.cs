@@ -140,15 +140,6 @@ namespace EmpManage.Controllers
             return View(); 
         }
 
-       
-       
-
-
-
-
-
-
-
 
 
 
@@ -171,6 +162,29 @@ namespace EmpManage.Controllers
             Repository.delete(EmployeeName);
             return View("deletetionsuccessfull");
         }
+
+        // [HttpPost]
+        // public ActionResult UploadImage()
+        // {
+        //     var file = Request.Files["image"];
+        //     if (file != null && file.ContentLength > 0)
+        //     {
+        //         var fileName = Path.GetFileName(file.FileName);
+        //         var path = Path.Combine(Server.MapPath("~/wwwroot/image"), fileName);
+        //         file.SaveAs(path);
+        //         return RedirectToAction("Index");
+        //     }
+        //     return View();
+        // }
+
+        // public ActionResult ViewImages()
+        // {
+        //     var images = Directory.GetFiles(Server.MapPath("~/wwwroot/image")).Select(x => Path.GetFileName(x));
+        //     return View(images);
+        // }
+
+    
+
 
     //     [HttpGet]
     //      public IActionResult toUpdateRecords()

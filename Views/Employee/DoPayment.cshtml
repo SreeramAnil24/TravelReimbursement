@@ -1,0 +1,23 @@
+
+    @model PaymentModel
+    @{
+    ViewBag.Title = "payment";
+    Layout = null;
+    }
+    <body>
+    @*<div id=”iframe_holder” class=”center-block” style=”width:90%;max-width: 1000px”>
+    <iframe id=”add_payment” class=”embed-responsive-item panel” name=”add_payment” height=”200%” width=”100%” frameborder=”0″ scrolling=”no” hidden=”true”></iframe>
+    </div>*@
+    <form name=”formpaynow” id=”formpaynow” method=”post” action=@Model.actionURl >
+    <input type=”hidden” value=”@Model.token” id=”token” name=”token” />
+    </form>
+    </body>
+    <script src=”~/Scripts/jquery-1.10.2.js”></script>
+    <script type=”text/javascript”>
+    $(document).ready(function () {
+    //$(“#add_payment”).show();
+    var form = $(“form”);
+    form.submit();
+    //$(window).scrollTop($(‘#add_payment’).offset().top – 50);
+    });
+    </script>

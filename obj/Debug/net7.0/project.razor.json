@@ -18645,6 +18645,16 @@
   "RootNamespace": "webapp",
   "Documents": [
     {
+      "FilePath": "d:\\TravelReimbursement\\Views\\Employee\\DoPayment.cshtml",
+      "TargetPath": "Views\\Employee\\DoPayment.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\TravelReimbursement\\Views\\Shared\\_Layoutwithonlylogo.cshtml",
+      "TargetPath": "Views\\Shared\\_Layoutwithonlylogo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\TravelReimbursement\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -18660,11 +18670,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\TravelReimbursement\\Views\\Employee\\ReimbursementDetails.cshtml",
-      "TargetPath": "Views\\Employee\\ReimbursementDetails.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "d:\\TravelReimbursement\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -18672,11 +18677,6 @@
     {
       "FilePath": "d:\\TravelReimbursement\\Views\\Employee\\deletetionsuccessfull.cshtml",
       "TargetPath": "Views\\Employee\\deletetionsuccessfull.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\TravelReimbursement\\Views\\Employee\\UploadProofs.cshtml",
-      "TargetPath": "Views\\Employee\\UploadProofs.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18765,6 +18765,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\TravelReimbursement\\Views\\Employee\\UploadImage.cshtml",
+      "TargetPath": "Views\\Employee\\UploadImage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\TravelReimbursement\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -18787,6 +18792,11 @@
     {
       "FilePath": "d:\\TravelReimbursement\\Views\\Employee\\Dashboard.cshtml",
       "TargetPath": "Views\\Employee\\Dashboard.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\TravelReimbursement\\Views\\Employee\\ViewImages.cshtml",
+      "TargetPath": "Views\\Employee\\ViewImages.cshtml",
       "FileKind": "mvc"
     }
   ],

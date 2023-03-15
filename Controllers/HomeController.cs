@@ -1,6 +1,10 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using EmpManage.Models;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using System;
 
 namespace EmpManage.Controllers;
 
@@ -12,6 +16,27 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
+
+    // [HttpPost]
+    // public async Task<IActionResult> UploadFile(IFormFile file)
+    // {
+    //     if (file != null && file.Length > 0)
+    //     {
+    //         string fileName = Path.GetFileName(file.FileName);
+    //         string path = Path.Combine(System.Web.HttpContext.Current.Server.MapPath(("~/Uploads"), fileName));
+    //         using (var stream = new FileStream(path, FileMode.Create))
+    //         {
+    //             await file.CopyToAsync(stream);
+    //         }
+
+    //         // Save the file information to the database or a file
+    //         // ...
+
+    //         return RedirectToAction("Index");
+    //     }
+
+    //     return View();
+    // }
 
     public IActionResult Index()
     {

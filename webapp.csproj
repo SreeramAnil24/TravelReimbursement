@@ -6,5 +6,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5"/>
+    <PackageReference Include="Braintree" Version="5.16.0"/>
   </ItemGroup>
 </Project>

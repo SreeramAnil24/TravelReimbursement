@@ -1,8 +1,15 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+
+
 <style>
   .boxfunc{
   padding: 5px 5px 5px 5px;
   border-radius: 10px;
-  height: 49px;
+  height: 55px;
+  background-color: rgb(66, 65, 66);
+
   width: 22%;
   margin: 5px 1% 5px 1%;
   float: center;
@@ -12,7 +19,20 @@
   text-align: center;
   overflow: hidden;
   transition: 1.5s;
-  box-shadow: 20px 20px 30px black;  
+  box-shadow: 20px 20px 30px rgb(97, 19, 107);  
+
+}
+.boxfunc2{
+    width: 1300px;
+    height: 500px;
+    background-color: rgb(39, 36, 38);
+    border-radius: 1em;
+    align-items: center;
+    flex-direction: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 20px 20px 30px black;  
 
 }
 
@@ -35,7 +55,7 @@
 </head>
 <!DOCTYPE html>
 @{
-    Layout = "~/Views/Shared/_Layoutnoicons.cshtml";
+    Layout = "~/Views/Shared/_Layoutwithonlylogo.cshtml";
 }
 <html>
 <title>Admin Dashboard</title>
@@ -45,38 +65,58 @@
 
 
 <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none" id="mySidebar">
-  <button class="w3-bar-item w3-button w3-large"
-  onclick="w3_close()">Close &times;</button>
+  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
   <a asp-controller="Employee" asp-action="EmployeeDetails" class="w3-bar-item w3-button">View Employees</a>
   <a asp-controller="Employee" asp-action="ApproveReimbursements" class="w3-bar-item w3-button">Approve Reimbursements</a>
   <a href="#" class="w3-bar-item w3-button">Remove an employee</a>
+  <a href="#" class="w3-bar-item w3-button">Initiate Payment</a>
 </div>
 
 <div>
   <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
   <div class="w3-container">
-    <h1 style="text-align: center;">Admin Dashboard</h1>
+    
    
   </div>
 </div>
+<div class="boxfunc2">
+<br>
+<br>
 
-<div class="row">
+  <h4 style="color:white; font-family: 'Gloock', serif; font-size:30px; text-align:center"> Admin Dashboard:</h4>
+<br>
+<br>
+      <div class="row">
         <div class="boxfunc" >
-          <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/912/912318.png" width="40" height="40">View Employees</h4>
-          <p style="color:white">Show all employees who have applied for reimbursements.</p> 
+          <h4 style="color:white;"><img src="https://cdn-icons-png.flaticon.com/512/10038/10038016.png" width="40" height="40">View Employees</h4>
+          <p style="color:white">View all employees with reimbursements.</p> 
         </div>
 
         <div class="boxfunc">
-          <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/4603/4603456.png" width="40" height="40">Approve Reimbursements</h4>
+          <h4 style="color:white;"><img src="https://cdn-icons-png.flaticon.com/512/9717/9717071.png" width="40" height="40">Approve Reimbursements</h4>
           <p style="color:white">Allow/ Deny Reimbursements</p> 
         </div>
 
         <div class="boxfunc">
-          <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/7516/7516532.png" width="40" height="40">Remove an Employee</h4>
+          <h4 style="color:white;"><img src="https://cdn-icons-png.flaticon.com/512/4671/4671213.png" width="40" height="40">Remove an Employee</h4>
           <p style="color:white">Remove an employee from the portal</p> 
         </div>
-      </div>
 
+
+        <div class="boxfunc">
+          <h4 style="color:white;"><img src="https://cdn-icons-png.flaticon.com/512/9531/9531112.png" width="40" height="40">Payments</h4>
+          <p style="color:white">Initiate payment for a user.</p> 
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="boxfunc">
+          <h4 style="color:white;"><img src="https://cdn-icons-png.flaticon.com/512/657/657702.png" width="40" height="40">Logout</h4>
+          <p style="color:white">Log out from the portal.</p> 
+        </div>
+      </div>
+</div>
 
 
 <script>

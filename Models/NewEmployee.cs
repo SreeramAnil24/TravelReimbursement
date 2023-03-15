@@ -23,11 +23,8 @@ namespace EmpManage.Models
 
         public int expNo{get; set;}
         public string? expense{get; set;}
-        
         public string?expdate{get; set;}
-
         public int cost{get; set;}
-
         public string? currency{get; set;}
 
      

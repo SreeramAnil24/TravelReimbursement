@@ -20,7 +20,7 @@ namespace EmpManage.Models
         {
             try{
                 using(SqlConnection connection=new SqlConnection("Data Source=ASPIRE1879\\SQLEXPRESS;Initial Catalog=userDetails;Integrated Security=SSPI")){
-                    SqlCommand command=new SqlCommand($"insert into travelTable values('{Convert.ToString(travel.employeeID)}','{Convert.ToString(travel.travelNo)}','{Convert.ToString(travel.toDestination)}','{Convert.ToString(travel.mediumofTravel)}','{Convert.ToString(travel.dateofTravel)}','{Convert.ToString(travel.returnDate)}','{Convert.ToString(travel.projectName)}')",connection);
+                    SqlCommand command=new SqlCommand($"insert into travelsTable values('{Convert.ToInt32(travel.travelNo)}','{Convert.ToString(travel.employeeID)}','{Convert.ToString(travel.toDestination)}','{Convert.ToString(travel.mediumofTravel)}','{Convert.ToString(travel.dateofTravel)}','{Convert.ToString(travel.returnDate)}','{Convert.ToString(travel.projectName)}')",connection);
                     connection.Open();
                     command.ExecuteNonQuery();
                 }

@@ -22,8 +22,11 @@ h3{
 
 
 <body>
+    <br>
+    <br>
     <div class="boxfunc">
         <table style="width:100%" border=2>
+            <br>
                     <h3> Employee Reimbursement Request:</h3>
                     <thead>
                         <tr>
@@ -49,11 +52,17 @@ h3{
                                     <td>@datarow[4] &emsp; </td>
                                     <td>@datarow[2] &emsp; </td>                                   
                                     <td>@datarow[5] &emsp; </td>
+                                    
+                                    <td>    <div>
+                                        @* <a  href="@Url.Action("DeleteProduct", "Employee", new { deleteItem = "Pending" })">*@ <button style="color:green"> Approve </button> 
+                                        @* <a  href="@Url.Action("DeleteProduct", "Employee", new { deleteItem = "Pending" })">*@ <button style="color:red"> Deny </button> 
+                                        </div></td>
                                 </tr>
                             }
     
                         }
                         </tbody>
+                        
                 </table>            
     </div>
     <div class="container">
