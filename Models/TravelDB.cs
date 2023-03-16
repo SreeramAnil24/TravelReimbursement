@@ -17,10 +17,13 @@ namespace EmpManage.Models
 
 
         public static void addTravel(NewEmployee travel)
-        {
+        {   
+            Console.WriteLine("before");
             try{
                 using(SqlConnection connection=new SqlConnection("Data Source=ASPIRE1879\\SQLEXPRESS;Initial Catalog=userDetails;Integrated Security=SSPI")){
-                    SqlCommand command=new SqlCommand($"insert into travelsTable values('{Convert.ToInt32(travel.travelNo)}','{Convert.ToString(travel.employeeID)}','{Convert.ToString(travel.toDestination)}','{Convert.ToString(travel.mediumofTravel)}','{Convert.ToString(travel.dateofTravel)}','{Convert.ToString(travel.returnDate)}','{Convert.ToString(travel.projectName)}')",connection);
+                    SqlCommand command=new SqlCommand($"insert into travelsTable values('{Convert.ToString(travel.employeeID)}','{Convert.ToString(travel.toDestination)}','{Convert.ToString(travel.mediumofTravel)}','{Convert.ToString(travel.dateofTravel)}','{Convert.ToString(travel.returnDate)}','{Convert.ToString(travel.projectName)}')",connection);
+                    Console.WriteLine("after");
+
                     connection.Open();
                     command.ExecuteNonQuery();
                 }
@@ -32,17 +35,20 @@ namespace EmpManage.Models
 
         public static void addExpense(NewEmployee travel)
         {
-            try{
-                using(SqlConnection connection=new SqlConnection("Data Source=ASPIRE1879\\SQLEXPRESS;Initial Catalog=userDetails;Integrated Security=SSPI"))
-                {
-                    SqlCommand command=new SqlCommand($"insert into expTable values('{Convert.ToString(travel.expNo)}','{Convert.ToString(travel.expense)}','{Convert.ToString(travel.expdate)}','{Convert.ToString(travel.cost)}','{Convert.ToString(travel.currency)}', 'pending')",connection);
+            if(Convert.ToString(travel.expense)!=null){
+                try{
                     
-                    connection.Open();
-                    command.ExecuteNonQuery();
+                    using(SqlConnection connection=new SqlConnection("Data Source=ASPIRE1879\\SQLEXPRESS;Initial Catalog=userDetails;Integrated Security=SSPI"))
+                    {
+                        SqlCommand command=new SqlCommand($"insert into expenseTable values('{Convert.ToString(travel.expense)}','{Convert.ToString(travel.expdate)}','{Convert.ToString(travel.cost)}','{Convert.ToString(travel.currency)}',@value, 'pending')",connection);
+                        command.Parameters.AddWithValue("@value",travel.imageUrl);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
                 }
-            }
-            catch(Exception exception){
-                Console.WriteLine(exception.Message);
+                catch(Exception exception){
+                    Console.WriteLine(exception.Message);
+                }
             }
         }
         

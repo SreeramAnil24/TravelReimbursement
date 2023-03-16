@@ -18,7 +18,7 @@ namespace EmpManage.Models
         public static void toCreate(NewEmployee employee)
         {
             try{
-                using(SqlConnection connection=new SqlConnection("Data Source=ASPIRE1879\\SQLEXPRESS;Initial Catalog=userDetails;Integrated Security=SSPI")){
+                using(SqlConnection connection=new SqlConnection(getConnection())){
                     SqlCommand command=new SqlCommand($"insert into userRecords1 values('{Convert.ToString(employee.employeeID)}','{Convert.ToString(employee.employeeName)}','{Convert.ToString(employee.password)}','{Convert.ToString(employee.age)}','{Convert.ToString(employee.salary)}','{Convert.ToString(employee.department)}')",connection);
                     connection.Open();
                     command.ExecuteNonQuery();
@@ -42,7 +42,7 @@ namespace EmpManage.Models
         }
         public static DataTable displayUserDetails()
         {
-            SqlConnection connection=new SqlConnection("Data Source=ASPIRE1879\\SQLEXPRESS;Initial Catalog=userDetails;Integrated Security=SSPI");
+            SqlConnection connection=new SqlConnection(getConnection());
             DataTable userdatas=new DataTable();
             try{
                 SqlDataAdapter dataadapter=new SqlDataAdapter($"select * from userRecords1",connection);
@@ -59,10 +59,10 @@ namespace EmpManage.Models
         
         public static DataTable displayExpenseDetails()
         {
-            SqlConnection connection=new SqlConnection("Data Source=ASPIRE1879\\SQLEXPRESS;Initial Catalog=userDetails;Integrated Security=SSPI");
+            SqlConnection connection=new SqlConnection(getConnection());
             DataTable userdatas=new DataTable();
             try{
-                SqlDataAdapter dataadapter=new SqlDataAdapter($"select * from expTable",connection);
+                SqlDataAdapter dataadapter=new SqlDataAdapter($"select * from expenseTable",connection);
                 dataadapter.Fill(userdatas);
             }
             catch(Exception exception){
@@ -83,20 +83,79 @@ namespace EmpManage.Models
             }
             return "novalue";
         }
+
+        public static bool isValidID(string? employeeID)
+        {      
+            SqlConnection connection=new SqlConnection(getConnection());                          
+            SqlCommand command=new SqlCommand($"Select count(*) from userRecords1 where employeeID='{employeeID}'",connection);
+            connection.Open();
+            if(Convert.ToInt32(command.ExecuteScalar())==1)
+            {
+               connection.Close();
+               return true;
+            }
+            connection.Close();
+            return false;           
+        }
         
 
 
-         public static void delete(string employeeName)
+
+
+         public static void deleteEmployee(string? employeeID)
         {
-           foreach(NewEmployee x in allEmployees)
-           {
-            if(x.employeeName==employeeName)
+            try
             {
-                allEmployees.Remove(x);
-                break;
+                using(SqlConnection connection=new SqlConnection(getConnection()))
+                {
+                    SqlCommand command=new SqlCommand($"Delete from userRecords1 where employeeID = '{employeeID}'",connection);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
             }
-           }
+            catch(Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
         }
+
+
+        public static void approveReimbursement(string? employeeID)
+        {
+            try
+            {
+                using(SqlConnection connection=new SqlConnection(getConnection()))
+                {
+                    SqlCommand command=new SqlCommand($"UPDATE expTable SET approval = 'Approved' WHERE employeeID ='{employeeID}'",connection);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch(Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+        }
+
+        public static string? getConnection()
+        {
+            var build = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json",optional:true,reloadOnChange:true);
+            IConfiguration configuration = build.Build();
+            string? connectionString = Convert.ToString(configuration.GetConnectionString("DB1"));
+            return connectionString;
+        }
+        
+        //  public static void removeEmployee(string employeeID)
+        // {
+        //    foreach(NewEmployee x in allEmployees)
+        //    {
+        //     if(x.employeeName==employeeID)
+        //     {
+        //         allEmployees.Remove(x);
+        //         break;
+        //     }
+        //    }
+        // }
 
         //  public static int update(NewEmployee employee)
         // {

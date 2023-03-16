@@ -15,12 +15,32 @@
 
 
    .boxfunc{
-    width: 225px;
-    height: 150px;
-    background-color: rgb(31, 30, 30);
+  padding: 5px 5px 5px 5px;
+  border-radius: 10px;
+  height: 55px;
+  background-color: rgb(66, 65, 66);
+  margin-left: 50px;
+
+  width: 22%;
+  margin: 5px 1% 5px 1%;
+  float: center;
+  position: center;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  text-align: center;
+  overflow: hidden;
+  transition: 1.5s;
+  box-shadow: 20px 20px 30px rgb(9, 150, 126);  
+
+}
+
+.boxfunc2{
+    width: 1300px;
+    height: 500px;
+    background-color: rgb(39, 36, 38);
     border-radius: 1em;
     align-items: center;
-    flex-direction: column;
+    flex-direction: center;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -28,40 +48,56 @@
 
 }
 
+
 .boxfunc:hover {
-  background-color:rgb(82, 21, 139);
+  @* background-color:rgb(82, 21, 139);
   cursor: pointer;
   -webkit-transition: background-color 2s ease-out;
   -moz-transition: background-color 2s ease-out;
   -o-transition: background-color 2s ease-out;
-  transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out; *@
+  height: 90px;
+  width: 25vw;
 }
+
 
   </style>
 </head>
 <body>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div>
-    <br>
+  <div class="w3-sidebar w3-bar-block w3-white w3-xxlarge" style="width:70px;right:0">
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a> 
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a> 
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a> 
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-globe"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-trash"></i></a> 
+  </div>
+<div class="boxfunc2">
+
     <div class="col-sm-9">
       <div>
-        <h2>@ViewBag.message 's Dashboard</h2>
-        <p>Check your Travel Reimbursement status here.</p>
+        <center>
+        @* <h2>@ViewBag.message 's Dashboard</h2> *@
+<h4 style="color:white; font-family: 'Gloock', serif; font-size:30px; text-align:center"> User Dashboard:</h4><p style="color:white;">Check your Travel Reimbursement status here.</p>
+        </center>
       </div>
       <div class="row">
         <div class="boxfunc" >
-          <h4 style="color:white; font-family: 'Gloock', serif;">Destination:</h4>
+          <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/7126/7126401.png" width="40" height="40">Destination:</h4>
           <p style="color:white">Your Destination</p> 
         </div>
 
         <div class="boxfunc">
-          <h4 style="color:white; font-family: 'Gloock', serif;">Travel Medium:</h4>
+          <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/1243/1243113.png" width="40" height="40">Travel Medium:</h4>
           <p style="color:white">Your Travel Medium</p> 
         </div>
 
         <div class="boxfunc">
-          <h4 style="color:white; font-family: 'Gloock', serif;">Date of Travel:</h4>
+          <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/661/661553.png" width="40" height="40">Date of Travel:</h4>
           <p style="color:white">Date</p> 
         </div>
       </div>
@@ -72,23 +108,23 @@
 
       <div class="row" >
           <div class="boxfunc">       
-            <h4 style="color:white; font-family: 'Gloock', serif;">Reimbursement's applied:</h4>
+            <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/1122/1122163.png" width="40" height="40">Reimbursement's applied:</h4>
             <p style="color:white">number of reimbursements</p> 
           </div>
 
           <div class="boxfunc">  
-            <h4 style="color:white; font-family: 'Gloock', serif;">Reimbursements approved:</h4>
+            <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/8187/8187443.png" width="40" height="40">Reimbursements approved:</h4>
             <p style="color:white">number of approved</p> 
           </div>
       
           <div class="boxfunc">  
-            <h4 style="color:white; font-family: 'Gloock', serif;">Approval Status:</h4>
+            <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/9264/9264010.png" width="40" height="40">Approval Status:</h4>
             <p style="color:white">Arroved/Not Approved</p> 
           </div>
       </div>
     </div>
   </div>
 </div>
-
+</div>
 </body>
 </html>

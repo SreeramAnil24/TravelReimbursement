@@ -1,18 +1,25 @@
+//Project Title : Travel Reimbursement System
+//Author : Sreeram Anil
+//Created At : Feb 16
+//last Modified : March 16
+//Review DATE : 
+//Reviewed By :
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    //options.IdleTimeout = TimeSpan.FromSeconds(10);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
-builder.Services.AddDistributedMemoryCache();
-
-// builder.Services.AddSession(options =>
-// {
-//     // options.IdleTimeout = TimeSpan.FromSeconds(10);
-//     options.Cookie.HttpOnly = true;
-//     options.Cookie.IsEssential = true;
-// });
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -27,7 +34,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-// app.UseSession();
+
+app.UseSession();
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

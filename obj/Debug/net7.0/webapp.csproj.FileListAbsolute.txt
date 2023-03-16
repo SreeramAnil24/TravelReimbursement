@@ -136,3 +136,6 @@ D:\TravelReimbursement\obj\Debug\net7.0\refint\webapp.dll
 D:\TravelReimbursement\obj\Debug\net7.0\webapp.pdb
 D:\TravelReimbursement\obj\Debug\net7.0\webapp.genruntimeconfig.cache
 D:\TravelReimbursement\obj\Debug\net7.0\ref\webapp.dll
+D:\TravelReimbursement\bin\Debug\net7.0\Braintree.dll
+D:\TravelReimbursement\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\TravelReimbursement\bin\Debug\net7.0\System.Xml.XPath.XmlDocument.dll

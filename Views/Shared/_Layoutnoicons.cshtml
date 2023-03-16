@@ -31,7 +31,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="employee" asp-action="Reimbursement">New Reimbursement </a>
                         </li>
-                        
+                            @{
+                                if(ViewBag.userSession!=null){
+                                    <p class="nav-item nav-itm navi-right" style="color:white; font-family:'Cookie', cursive;font-size:18px">@ViewBag.userSession</p>    }
+                            }
                     </ul>
                 </div>
             </div>

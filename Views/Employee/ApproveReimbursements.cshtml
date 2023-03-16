@@ -52,11 +52,18 @@ h3{
                                     <td>@datarow[4] &emsp; </td>
                                     <td>@datarow[2] &emsp; </td>                                   
                                     <td>@datarow[5] &emsp; </td>
+                                    <td>@datarow[6] &emsp; </td>
+                                    @{
+                                        string imageBase64Data=Convert.ToBase64String((byte[])datarow[1]);
+                                        string imageDataURL=string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+                                        <td><img src=@imageDataURL width="25px" height="25px"></td>
+                                    }
                                     
-                                    <td>    <div>
+                                    
+                                    <td><div>
                                         @* <a  href="@Url.Action("DeleteProduct", "Employee", new { deleteItem = "Pending" })">*@ <button style="color:green"> Approve </button> 
-                                        @* <a  href="@Url.Action("DeleteProduct", "Employee", new { deleteItem = "Pending" })">*@ <button style="color:red"> Deny </button> 
-                                        </div></td>
+                                        @* <a  href="@Url.Action("DeleteProduct", "Employee", new { deleteItem = "Pending" })">*@ <button style="color:red"> Reject </button> 
+                                    </div></td>
                                 </tr>
                             }
     

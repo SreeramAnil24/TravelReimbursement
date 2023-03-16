@@ -25,6 +25,7 @@ namespace EmpManage.Models
         public string? expense{get; set;}
         public string?expdate{get; set;}
         public int cost{get; set;}
+        public byte[]? imageUrl {get; set;}
         public string? currency{get; set;}
 
      

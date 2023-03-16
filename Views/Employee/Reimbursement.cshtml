@@ -124,7 +124,7 @@ button:hover {
         <p>
           
           <label></label>
-          <input name="expNo" type="number" placeholder="Expense Number">
+          @* <input name="expNo" type="number" placeholder="Expense Number"> *@
           <input name="expense" type="text" placeholder="Expense Reason">
           <input name="expdate" type="Date" placeholder="Date">
           <input name="cost" type="number" placeholder="Enter Amount" min="1" max="10000000">
@@ -140,9 +140,9 @@ button:hover {
               <option value="AED">Dubai Dinar</option>
           </select>
           @* <input name="expense" type="file" placeholder="Expense Reason"> *@
-          <label for="img">Upload proofs:</label>
+          @* <label for="img">Upload proofs:</label>
           <input type="file" id="img" name="img" accept="image/*">
-          <input type="submit">
+          <input type="submit"> *@
         
           <button asp-controller="Employee" asp-action="Reimbursement" type="submit">Submit</button>
                       
@@ -181,6 +181,5 @@ button:hover {
       </div>
     </main>
     <a button asp-controller="Employee" asp-action="Dashboard" type="submit">Submit Requests</button></a>
-
   </div>
 </html>
