@@ -20,6 +20,10 @@ namespace EmpManage.Controllers
             return View(); 
         }
 
+        public IActionResult DashBoard(){
+            IEnumerable<int> dashBoardlist=Repository.dashBoard();
+            return View(dashBoardlist);
+        }
 
         [HttpPost]
         public IActionResult toCreate(NewEmployee employee)
@@ -147,6 +151,12 @@ namespace EmpManage.Controllers
         public IActionResult Reimbursement(NewEmployee travel)
         {   
             ViewBag.userSession=HttpContext.Session.GetString("employeeId");
+            foreach (var file in Request.Form.Files)
+            {
+                MemoryStream memoryStream=new MemoryStream();
+                file.CopyTo(memoryStream);
+                travel.imageUrl=memoryStream.ToArray();
+            }
             TravelDB.addExpense(travel);
             DataTable temp=Repository.displayExpenseDetails();
             

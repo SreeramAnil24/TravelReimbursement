@@ -70,6 +70,7 @@
   <a asp-controller="Employee" asp-action="ApproveReimbursements" class="w3-bar-item w3-button">Approve Reimbursements</a>
   <a href="#" class="w3-bar-item w3-button">Remove an employee</a>
   <a href="#" class="w3-bar-item w3-button">Initiate Payment</a>
+  <a asp-controller="Employee" asp-action="toCreate" class="w3-bar-item w3-button">Logout</a>
 </div>
 
 <div>
@@ -82,7 +83,6 @@
 <div class="boxfunc2">
 <br>
 <br>
-
   <h4 style="color:white; font-family: 'Gloock', serif; font-size:30px; text-align:center"> Admin Dashboard:</h4>
 <br>
 <br>
@@ -112,7 +112,7 @@
       <br>
       <div class="row">
         <div class="boxfunc">
-          <h4 style="color:white;"><img src="https://cdn-icons-png.flaticon.com/512/657/657702.png" width="40" height="40">Logout</h4>
+          <a asp-controller="Employee" asp-action="toCreate"><h4 style="color:white;"><img src="https://cdn-icons-png.flaticon.com/512/657/657702.png" width="40" height="40">Logout</h4></a>
           <p style="color:white">Log out from the portal.</p> 
         </div>
       </div>

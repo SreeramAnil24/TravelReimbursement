@@ -15,6 +15,41 @@ namespace EmpManage.Models
             }
         }
 
+
+        public static IEnumerable<int> dashBoard()
+        {
+            List<int> itemList = new List<int>();
+            try{
+                using(SqlConnection connection=new SqlConnection(getConnection())){
+                    SqlCommand command1=new SqlCommand($"select toDestination from travelsTable where",connection);
+                    SqlCommand command2=new SqlCommand($"select mediumofTravel from travelsTable where ",connection);
+                    SqlCommand command3=new SqlCommand($"s",connection);
+                    SqlCommand command4=new SqlCommand($"select count(*) from UserDetails",connection);
+                    SqlCommand command5=new SqlCommand($"select COUNT(*) from expsTable",connection);
+                    SqlCommand command6=new SqlCommand($"select COUNT(*) from expsTable where approval='approved'",connection);
+                    SqlCommand command7=new SqlCommand($"select COUNT(*) from BookTableDetails",connection);
+                    connection.Open();
+                    itemList.Add(Convert.ToInt32(command1.ExecuteScalar()));
+                    itemList.Add(Convert.ToInt32(command2.ExecuteScalar()));
+                    itemList.Add(Convert.ToInt32(command3.ExecuteScalar()));
+                    itemList.Add(Convert.ToInt32(command4.ExecuteScalar()));
+                    itemList.Add(Convert.ToInt32(command5.ExecuteScalar()));
+                    itemList.Add(Convert.ToInt32(command6.ExecuteScalar()));
+                    itemList.Add(Convert.ToInt32(command7.ExecuteScalar()));
+                    // int noOfFoodItems=Convert.ToInt32(command1.ExecuteScalar());
+                    // int noOfOrders=Convert.ToInt32(command2.ExecuteScalar());
+                    // int noOfPendingOrders=Convert.ToInt32(command3.ExecuteScalar());
+                    // int noOfUsers=Convert.ToInt32(command4.ExecuteScalar());
+                    // int noOfSalesAmount=Convert.ToInt32(command5.ExecuteScalar());
+                    // int noOfFeedBacks=Convert.ToInt32(command1.ExecuteScalar());
+                    // int noOfTableBooked=Convert.ToInt32(command1.ExecuteScalar());
+                }
+            }
+            catch(Exception exception){
+
+            }
+            return itemList;
+    }
         public static void toCreate(NewEmployee employee)
         {
             try{
@@ -62,7 +97,7 @@ namespace EmpManage.Models
             SqlConnection connection=new SqlConnection(getConnection());
             DataTable userdatas=new DataTable();
             try{
-                SqlDataAdapter dataadapter=new SqlDataAdapter($"select * from expenseTable",connection);
+                SqlDataAdapter dataadapter=new SqlDataAdapter($"select * from expsTable",connection);
                 dataadapter.Fill(userdatas);
             }
             catch(Exception exception){

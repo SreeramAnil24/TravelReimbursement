@@ -4,6 +4,7 @@
 
 
 <!DOCTYPE html>
+@model IEnumerable<int>
 @{
     Layout = "~/Views/Shared/_Layoutnoicons.cshtml";
 }
@@ -88,17 +89,17 @@
       <div class="row">
         <div class="boxfunc" >
           <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/7126/7126401.png" width="40" height="40">Destination:</h4>
-          <p style="color:white">Your Destination</p> 
+          <p style="color:white">@Model.ElementAt(0)</p> 
         </div>
 
         <div class="boxfunc">
           <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/1243/1243113.png" width="40" height="40">Travel Medium:</h4>
-          <p style="color:white">Your Travel Medium</p> 
+          <p style="color:white">@Model.ElementAt(1)</p> 
         </div>
 
         <div class="boxfunc">
           <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/661/661553.png" width="40" height="40">Date of Travel:</h4>
-          <p style="color:white">Date</p> 
+          <p style="color:white">@Model.ElementAt(2)</p> 
         </div>
       </div>
 
@@ -109,17 +110,17 @@
       <div class="row" >
           <div class="boxfunc">       
             <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/1122/1122163.png" width="40" height="40">Reimbursement's applied:</h4>
-            <p style="color:white">number of reimbursements</p> 
+            <p style="color:white">@Model.ElementAt(3)</p> 
           </div>
 
           <div class="boxfunc">  
             <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/8187/8187443.png" width="40" height="40">Reimbursements approved:</h4>
-            <p style="color:white">number of approved</p> 
+            <p style="color:white">@Model.ElementAt(4)</p> 
           </div>
       
           <div class="boxfunc">  
             <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/9264/9264010.png" width="40" height="40">Approval Status:</h4>
-            <p style="color:white">Arroved/Not Approved</p> 
+            <p style="color:white">@Model.ElementAt(5)</p> 
           </div>
       </div>
     </div>

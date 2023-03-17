@@ -120,7 +120,7 @@ button:hover {
   <br>
     <h2 style="text-align:center;color:rgb(255, 255, 255); font-family: 'Gloock', serif; font-size:30px">Apply for a Reimbursement:<img src="https://cdn-icons-png.flaticon.com/512/2856/2856947.png" width="50" height="50"></h2>
     <main class="main">
-      <form method="post">
+      <form method="post" enctype="multipart/form-data">
         <p>
           
           <label></label>
@@ -143,6 +143,8 @@ button:hover {
           @* <label for="img">Upload proofs:</label>
           <input type="file" id="img" name="img" accept="image/*">
           <input type="submit"> *@
+          <label>Proof upload</label>
+          <input name="imageUrl" type="file" onchange="readURL(this)" accept="Image/*" required>
         
           <button asp-controller="Employee" asp-action="Reimbursement" type="submit">Submit</button>
                       
@@ -171,7 +173,7 @@ button:hover {
                         <td>@datarow[3] &emsp; </td>
                         <td>@datarow[4] &emsp; </td>
                         <td>@datarow[2] &emsp; </td>
-                        <td>@datarow[5] &emsp; </td>
+                        <td>@datarow[6] &emsp; </td>
                     </tr>
                 }
 

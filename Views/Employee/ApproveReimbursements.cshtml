@@ -12,7 +12,6 @@
     margin-left: auto;
     margin-right: auto;
     box-shadow: 20px 20px 30px black;  
-
 }
 
 h3{
@@ -22,6 +21,8 @@ h3{
 
 
 <body>
+   
+    </div>
     <br>
     <br>
     <div class="boxfunc">
@@ -35,6 +36,7 @@ h3{
                             <th> Amount &emsp; </th>
                             <th> Currency &emsp; </th>
                             <th> Date </th>
+                            <th> Expense Proof </th>
                             <th> Approval </th>
 
                         </tr>
@@ -51,14 +53,13 @@ h3{
                                     <td>@datarow[3] &emsp; </td>
                                     <td>@datarow[4] &emsp; </td>
                                     <td>@datarow[2] &emsp; </td>                                   
-                                    <td>@datarow[5] &emsp; </td>
-                                    <td>@datarow[6] &emsp; </td>
                                     @{
-                                        string imageBase64Data=Convert.ToBase64String((byte[])datarow[1]);
+                                        string imageBase64Data=Convert.ToBase64String((byte[])datarow[5]);
                                         string imageDataURL=string.Format("data:image/jpg;base64,{0}", imageBase64Data);
-                                        <td><img src=@imageDataURL width="25px" height="25px"></td>
+                                        <td><img src=@imageDataURL width="50px" height="50px"></td>
                                     }
-                                    
+                                    <td>@datarow[6] &emsp; </td>
+
                                     
                                     <td><div>
                                         @* <a  href="@Url.Action("DeleteProduct", "Employee", new { deleteItem = "Pending" })">*@ <button style="color:green"> Approve </button> 
