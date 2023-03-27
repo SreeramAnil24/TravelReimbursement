@@ -4,9 +4,134 @@
 @{
     Layout = "~/Views/Shared/_Layoutwithnolinks.cshtml";
 }
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel Reimbursement System</title>
+@* <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Shantell+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
 <div class="text-center">
     <h1 style="font-family: 'ABeeZee', sans-serif;">Travel Reimbursement System</h1>
-</div>
+</div> *@
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+	<style>
+		.container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-items: stretch;
+			height: 10vh;
+			margin: 0;
+			padding: 0;
+		}
+
+		.col {
+			flex: 1;
+			height: 100%;
+			margin: 0;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+
+		.col.left {
+			background-color:none;
+		}
+
+		.col.right {
+			background-color: none;
+            width:100%;
+		}
+
+        @* body {
+			background-image: url("https://img.freepik.com/free-vector/concept-banner-turism-realistic-style-with-map-pointer-road-sign-suitcase-camera-vector-illustration_548887-208.jpg?w=996&t=st=1679900358~exp=1679900958~hmac=76a14cb91d377bb33f2a6c12d7bcca1db67a70ecdff7c28c42ca444a50173ae6");
+			@* background-repeat: no-repeat; 
+			background-size: cover;
+		} *@
+
+		@@media only screen and (max-width: 600px) {
+			.container {
+				flex-direction: column;
+				height: auto;
+			}
+
+			.col {
+				height: auto;
+				padding: 20px;
+			}
+
+            .get-started-btn {
+                background-color: #3498db;
+                color: #fff;
+                font-size: 18px;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+            }
+
+            .get-started-btn:hover {
+                background-color: #fff;
+                color: #3498db;
+                border: 2px solid #3498db;
+                box-shadow: 0px 0px 15px #3498db;
+            }
+
+			#typing-effect {
+				font-size: 18px;
+				font-family: monospace;
+				white-space: nowrap;
+				overflow: hidden;
+				border-right: 2px solid black;
+				width: 12em;
+				font-family: 'Nanum Gothic Coding', monospace;
+				animation: typing 1s steps(20) infinite;
+				}
+
+				@@keyframes typing {
+				from { width: 0 }
+				to { width: 12em }
+				}
+
+
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="col left">
+			<!-- Content for the left column goes here -->
+            <img src="https://clouddevs.com/3dbay/files/preview/1280x768/11623330120yev8sovvbcbddorn3ce6zkvj1lfok724fgjjonzgbwtzkxgkc97c0rupmusklldciuorur4qp2cwbyagi1qbb262ek2zfm5hkcut.png" >
+		</div>
+		<div class="col right">
+			<!-- Content for the right column goes here -->
+			<h2>Welcome to <p style="font-family:'Cookie', cursive;font-size:50px">TravelGuide</p></h2>
+			<div id="typing-effect"></div>
+            <a asp-controller="Employee" asp-action="toCreate"><button class="get-started-btn">Get Started</button></a>
+
+        </div>
+	</div>
+</body>
+</html>
+
+<script>
+	const text = "We're here to simplify the reimbursement process and help you save time and money. Whether you're traveling for business or pleasure, we've got you covered.";
+	const typingEffect = document.getElementById("typing-effect");
+	let i = 0;
+
+	function typeText() {
+	typingEffect.textContent = text.slice(0, ++i);
+	if (i < text.length) {
+		setTimeout(typeText, 70);
+	}
+	}
+
+	typeText();
+
+</script>
+

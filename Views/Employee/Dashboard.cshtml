@@ -4,9 +4,9 @@
 
 
 <!DOCTYPE html>
-@model IEnumerable<int>
+@model IEnumerable<object>
 @{
-    Layout = "~/Views/Shared/_Layoutnoicons.cshtml";
+    Layout = "~/Views/Shared/_Layoutwithonlylogo.cshtml";
 }
 <html lang="en">
 <head>
@@ -15,14 +15,14 @@
 
 
 
-   .boxfunc{
+  .boxfunc{
   padding: 5px 5px 5px 5px;
   border-radius: 10px;
   height: 55px;
   background-color: rgb(66, 65, 66);
   margin-left: 50px;
 
-  width: 22%;
+  width: 35%;
   margin: 5px 1% 5px 1%;
   float: center;
   position: center;
@@ -36,13 +36,15 @@
 }
 
 .boxfunc2{
-    width: 1300px;
+    width: 1000px;
     height: 500px;
     background-color: rgb(39, 36, 38);
     border-radius: 1em;
-    align-items: center;
-    flex-direction: center;
-    justify-content: center;
+    @* align-items: center; *@
+    flex-direction: row;
+    flex-wrap: wrap;
+    @* justify-content: center; *@
+    padding-left: 12em;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 20px 20px 30px black;  
@@ -70,12 +72,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div>
-  <div class="w3-sidebar w3-bar-block w3-white w3-xxlarge" style="width:70px;right:0">
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a> 
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a> 
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a> 
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-globe"></i></a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-trash"></i></a> 
+  <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge" style="width:65px;right:0">
+      <a asp-controller="Employee" asp-action="Reimbursement" class="w3-bar-item w3-button"><img src="https://cdn-icons-png.flaticon.com/512/9484/9484175.png" title="Add a new Expense" width="40" height="40"></a>
+      <a asp-controller="Employee" asp-action="Destination" class="w3-bar-item w3-button"><img src="https://cdn-icons-png.flaticon.com/512/8240/8240469.png" title="Add a new Travel" width="40" height="40"></a>  
+      <a href="https://mail.aspiresystems.com/src/login.php" class="w3-bar-item w3-button"><img src="https://cdn-icons-png.flaticon.com/512/9644/9644981.png" title="Send a mail to the Admin" width="40" height="40"></a> 
+      <a asp-controller="Employee" asp-action="toLogin" class="w3-bar-item w3-button"><img src="https://cdn-icons-png.flaticon.com/512/5631/5631841.png" title="Log out from the portal" width="40" height="40"></a> 
+      
+      @* <a href="#" class="w3-bar-item w3-button"><i class="fa fa-trash"></i></a>  *@
   </div>
 <div class="boxfunc2">
 
@@ -103,9 +106,6 @@
         </div>
       </div>
 
-      <br>
-      <br>
-      <br>
 
       <div class="row" >
           <div class="boxfunc">       

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -16,26 +17,25 @@ namespace EmpManage.Models
         }
 
 
-        public static IEnumerable<int> dashBoard()
-        {
-            List<int> itemList = new List<int>();
+        public static IEnumerable<object> dashBoard(NewEmployee employee)
+        {   
+            Console.WriteLine(employee.employeeID);
+            List<object> itemList = new List<object>();
             try{
                 using(SqlConnection connection=new SqlConnection(getConnection())){
-                    SqlCommand command1=new SqlCommand($"select toDestination from travelsTable where",connection);
-                    SqlCommand command2=new SqlCommand($"select mediumofTravel from travelsTable where ",connection);
-                    SqlCommand command3=new SqlCommand($"s",connection);
-                    SqlCommand command4=new SqlCommand($"select count(*) from UserDetails",connection);
-                    SqlCommand command5=new SqlCommand($"select COUNT(*) from expsTable",connection);
-                    SqlCommand command6=new SqlCommand($"select COUNT(*) from expsTable where approval='approved'",connection);
-                    SqlCommand command7=new SqlCommand($"select COUNT(*) from BookTableDetails",connection);
+                    SqlCommand command1=new SqlCommand($"select toDestination from travelsTable where employeeID='{employee.employeeID}'",connection);
+                    SqlCommand command2=new SqlCommand($"select mediumofTravel from travelsTable where employeeID='{employee.employeeID}'",connection);
+                    SqlCommand command3=new SqlCommand($"select dateofTravel from travelsTable where employeeID='{employee.employeeID}'",connection);
+                    SqlCommand command4=new SqlCommand($"select count(*) from expsTable",connection);
+                    SqlCommand command5=new SqlCommand($"select COUNT(*) from expsTable where approval='approved'",connection);
+                    SqlCommand command6=new SqlCommand($"select COUNT(*) from expsTable",connection);
                     connection.Open();
-                    itemList.Add(Convert.ToInt32(command1.ExecuteScalar()));
-                    itemList.Add(Convert.ToInt32(command2.ExecuteScalar()));
-                    itemList.Add(Convert.ToInt32(command3.ExecuteScalar()));
-                    itemList.Add(Convert.ToInt32(command4.ExecuteScalar()));
-                    itemList.Add(Convert.ToInt32(command5.ExecuteScalar()));
-                    itemList.Add(Convert.ToInt32(command6.ExecuteScalar()));
-                    itemList.Add(Convert.ToInt32(command7.ExecuteScalar()));
+                    itemList.Add(Convert.ToString(command1.ExecuteScalar()));
+                    itemList.Add(Convert.ToString(command2.ExecuteScalar()));
+                    itemList.Add(Convert.ToString(command3.ExecuteScalar()));
+                    itemList.Add(Convert.ToString(command4.ExecuteScalar()));
+                    itemList.Add(Convert.ToString(command5.ExecuteScalar()));
+                    itemList.Add(Convert.ToString(command6.ExecuteScalar()));
                     // int noOfFoodItems=Convert.ToInt32(command1.ExecuteScalar());
                     // int noOfOrders=Convert.ToInt32(command2.ExecuteScalar());
                     // int noOfPendingOrders=Convert.ToInt32(command3.ExecuteScalar());
@@ -97,7 +97,7 @@ namespace EmpManage.Models
             SqlConnection connection=new SqlConnection(getConnection());
             DataTable userdatas=new DataTable();
             try{
-                SqlDataAdapter dataadapter=new SqlDataAdapter($"select * from expsTable",connection);
+                SqlDataAdapter dataadapter=new SqlDataAdapter($"select * from expsTable where approval!='Rejected'",connection);
                 dataadapter.Fill(userdatas);
             }
             catch(Exception exception){
@@ -117,6 +117,12 @@ namespace EmpManage.Models
                     return Convert.ToString(datarow[1]);
             }
             return "novalue";
+        }
+
+        public static string? isValidAdmin(NewEmployee employee){
+            if((employee.employeeID=="A001" || employee.employeeID=="A002"))
+                return "admin";
+            return "notadmin";
         }
 
         public static bool isValidID(string? employeeID)

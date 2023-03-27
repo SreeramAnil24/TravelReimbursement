@@ -14,7 +14,7 @@
 <style>
 .login{
     width: 20em;
-    height: 30em;
+    height: 35em;
     background-color: rgb(31, 30, 30);
     border-color: black;
     border-radius: 3em;
@@ -104,6 +104,10 @@ span.psw {
         </p>
         <p>
             <button type="submit">Submit</button>
+        </p>
+        <p style="color:white">
+            Already a user?
+            <a asp-controller="Employee" asp-action="toLogin">Login</a>
         </p>
     </div>
     </center>        

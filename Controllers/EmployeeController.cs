@@ -20,8 +20,8 @@ namespace EmpManage.Controllers
             return View(); 
         }
 
-        public IActionResult DashBoard(){
-            IEnumerable<int> dashBoardlist=Repository.dashBoard();
+        public IActionResult Dashboard(NewEmployee employee){
+            IEnumerable<object> dashBoardlist=Repository.dashBoard(employee);
             return View(dashBoardlist);
         }
 
@@ -33,19 +33,7 @@ namespace EmpManage.Controllers
         }      
         
 
-        [HttpGet]
-        public IActionResult AdminLogin()
-        {
-            return View(); 
-        }
-
-        [HttpPost]
-        public IActionResult AdminLogin(NewEmployee employee)
-        {   
-
-            return View("AdminDashboard", employee); 
-        }  
-
+      
 
 
         [HttpGet]
@@ -62,13 +50,39 @@ namespace EmpManage.Controllers
             {
                 HttpContext.Session.SetString("employeeId",employee.employeeID);
                 ViewBag.message=a;
-                return View("Destination");
+                return RedirectToAction("Dashboard","Employee");
             }
                 
             else
                 return View("toLogin"); 
         }      
         
+        public IActionResult DoApprovals(string approvalstatus, string exp_number)
+        {
+            TravelDB.changeApproval(approvalstatus,exp_number);
+            DataTable expenseDetails=Repository.displayExpenseDetails();
+            return View("ApproveReimbursements", expenseDetails);
+
+        }
+
+          [HttpGet]
+        public IActionResult AdminLogin()
+        {
+            return View(); 
+        }
+
+        [HttpPost]
+        public IActionResult AdminLogin(NewEmployee employee)
+        {   
+            string?  a = Repository.isValidAdmin(employee);
+            if(a=="notadmin")
+            {   
+                return View("AdminLogin");  
+            }
+            else
+                return RedirectToAction("AdminDashboard", employee);
+        }  
+
         
         [HttpGet]
         public IActionResult AdminDashboard()
@@ -110,18 +124,7 @@ namespace EmpManage.Controllers
         // }
 
 
-        [HttpGet]
-        public IActionResult Dashboard()
-        {   
-            return View(); 
-        }
 
-        [HttpPost]
-        public IActionResult Dashboard(NewEmployee employee)
-        {   
-
-            return View("Documents", employee); 
-        }      
         
 
         [HttpGet]
@@ -135,7 +138,7 @@ namespace EmpManage.Controllers
         public IActionResult Destination(NewEmployee travel)
         {   
             TravelDB.addTravel(travel);
-            return View("Reimbursement"); 
+            return RedirectToAction("Reimbursement","Employee"); 
             
         }      
 
