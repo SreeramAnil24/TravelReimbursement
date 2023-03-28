@@ -34,6 +34,7 @@ h3{
                     <thead>
                         <tr>
                             <th> Expense No &emsp; </th>
+                            <th> Employee ID &emsp; </th>
                             <th> Expense Name &emsp; </th>
                             <th> Amount &emsp; </th>
                             <th> Currency &emsp; </th>
@@ -52,15 +53,16 @@ h3{
                                 <tr>
                                     <td>@datarow[0] &emsp; </td>
                                     <td>@datarow[1] &emsp; </td>
-                                    <td>@datarow[3] &emsp; </td>
+                                    <td>@datarow[2] &emsp; </td>
                                     <td>@datarow[4] &emsp; </td>
-                                    <td>@datarow[2] &emsp; </td>                                   
+                                    <td>@datarow[5] &emsp; </td>
+                                    <td>@datarow[3] &emsp; </td>
                                     @{
-                                        string imageBase64Data=Convert.ToBase64String((byte[])datarow[5]);
+                                        string imageBase64Data=Convert.ToBase64String((byte[])datarow[6]);
                                         string imageDataURL=string.Format("data:image/jpg;base64,{0}", imageBase64Data);
                                         <td><img src=@imageDataURL width="50px" height="50px"></td>
                                     }
-                                    <td>@datarow[6] &emsp; </td>
+                                    <td>@datarow[7] &emsp; </td>
 
                                     
                                     <td><div>

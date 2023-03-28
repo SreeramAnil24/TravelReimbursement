@@ -5,9 +5,10 @@ using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System;
+using Empmanage.Controllers;
 
 namespace EmpManage.Controllers;
-
+[Log]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;

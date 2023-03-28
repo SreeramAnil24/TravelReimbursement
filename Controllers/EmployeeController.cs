@@ -4,9 +4,13 @@ using EmpManage.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data;
+using Newtonsoft.Json;
+using System.Text;
+using Empmanage.Controllers;
 
 namespace EmpManage.Controllers
 {
+    [Log]
     public class EmployeeController : Controller
     {
         // public IActionResult webIndex()
@@ -50,7 +54,7 @@ namespace EmpManage.Controllers
             {
                 HttpContext.Session.SetString("employeeId",employee.employeeID);
                 ViewBag.message=a;
-                return RedirectToAction("Dashboard","Employee");
+                return RedirectToAction("Destination","Employee");
             }
                 
             else
@@ -111,10 +115,33 @@ namespace EmpManage.Controllers
                 file.CopyTo(memoryStream);
                 expense.imageUrl=memoryStream.ToArray();
             }
+            expense.employeeID=Convert.ToString(HttpContext.Session.GetString("employeeId"));
             TravelDB.addExpense(expense);
             DataTable expensedatas=Repository.displayExpenseDetails();
             return View("ApproveReimbursements",expensedatas);
         }
+
+         public IActionResult PaymentDetails(NewEmployee employee)
+        {   
+            DataTable employeedetails=Repository.displayApprovedExpenses();
+            int a=Repository.displayTotal(employee.employeeID);
+            ViewBag.message=a;
+            
+            return View("PaymentDetails",employeedetails);
+        }
+
+        // [HttpPost]
+        // public IActionResult PaymentDetails(NewEmployee expense)
+        // {   
+        //     foreach (var file in Request.Form.Files)
+        //     {
+        //         MemoryStream memoryStream=new MemoryStream();
+        //         file.CopyTo(memoryStream);
+        //         expense.imageUrl=memoryStream.ToArray();
+        //     }
+        //     DataTable expensedatas=Repository.displayApprovedExpenses();
+        //     return View("PaymentDetails",expensedatas);
+        // }
 
         // public IActionResult ApprovedReimbursement(string employeeID)
         // {   
@@ -160,12 +187,32 @@ namespace EmpManage.Controllers
                 file.CopyTo(memoryStream);
                 travel.imageUrl=memoryStream.ToArray();
             }
+            travel.employeeID=Convert.ToString(HttpContext.Session.GetString("employeeId"));
             TravelDB.addExpense(travel);
             DataTable temp=Repository.displayExpenseDetails();
             
             return View("Reimbursement",temp);
         } 
 
+
+        public IActionResult Feedback(){
+        return View();
+    }
+    [HttpPost]
+    public async Task<IActionResult> Feedback(Feedback feedback){
+        feedback.emailid=Request.Form["emailid"];
+        feedback.rating=Convert.ToInt32(Request.Form["rating"]);
+        feedback.feedback=Request.Form["feedback"];
+        Console.WriteLine(feedback.emailid);
+        HttpClient httpClient=new HttpClient();
+        string apiUrl="http://localhost:5005/api/Feedback";
+        var jsondata = JsonConvert.SerializeObject(feedback);
+        var data = new StringContent(jsondata,Encoding.UTF8,"application/json");
+        var httpresponse=httpClient.PostAsync(apiUrl,data);
+        var result = await httpresponse.Result.Content.ReadAsStringAsync();
+        Console.WriteLine(result);
+        return View();
+    }
 
 
         [HttpGet]

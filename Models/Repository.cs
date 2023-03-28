@@ -26,9 +26,9 @@ namespace EmpManage.Models
                     SqlCommand command1=new SqlCommand($"select toDestination from travelsTable where employeeID='{employee.employeeID}'",connection);
                     SqlCommand command2=new SqlCommand($"select mediumofTravel from travelsTable where employeeID='{employee.employeeID}'",connection);
                     SqlCommand command3=new SqlCommand($"select dateofTravel from travelsTable where employeeID='{employee.employeeID}'",connection);
-                    SqlCommand command4=new SqlCommand($"select count(*) from expsTable",connection);
-                    SqlCommand command5=new SqlCommand($"select COUNT(*) from expsTable where approval='approved'",connection);
-                    SqlCommand command6=new SqlCommand($"select COUNT(*) from expsTable",connection);
+                    SqlCommand command4=new SqlCommand($"select count(*) from expenseTable",connection);
+                    SqlCommand command5=new SqlCommand($"select COUNT(*) from expenseTable where approval='approved'",connection);
+                    SqlCommand command6=new SqlCommand($"select COUNT(*) from expenseTable where approval='rejected'",connection);
                     connection.Open();
                     itemList.Add(Convert.ToString(command1.ExecuteScalar()));
                     itemList.Add(Convert.ToString(command2.ExecuteScalar()));
@@ -97,7 +97,7 @@ namespace EmpManage.Models
             SqlConnection connection=new SqlConnection(getConnection());
             DataTable userdatas=new DataTable();
             try{
-                SqlDataAdapter dataadapter=new SqlDataAdapter($"select * from expsTable where approval!='Rejected'",connection);
+                SqlDataAdapter dataadapter=new SqlDataAdapter($"select * from expenseTable where approval!='Rejected'",connection);
                 dataadapter.Fill(userdatas);
             }
             catch(Exception exception){
@@ -107,6 +107,41 @@ namespace EmpManage.Models
                 
             }        
             return userdatas;       
+        }
+
+        public static DataTable displayApprovedExpenses()
+        {
+            SqlConnection connection=new SqlConnection(getConnection());
+            DataTable userdatas=new DataTable();
+            try{
+                SqlDataAdapter dataadapter=new SqlDataAdapter($"select * from expenseTable where approval='Approved'",connection);
+                dataadapter.Fill(userdatas);
+            }
+            catch(Exception exception){
+                Console.WriteLine(exception.Message);
+            }
+            finally{
+                
+            }        
+            return userdatas;       
+        }
+
+        public static int displayTotal(string? employeeID)
+        {
+            SqlConnection connection=new SqlConnection(getConnection());
+            int totalAmount=0;
+            try{
+                SqlCommand sumcommand=new SqlCommand($"select sum(cost) from expenseTable where approval='Approved' and employee_id='{employeeID}'",connection);
+                connection.Open();
+                totalAmount=Convert.ToInt32(sumcommand.ExecuteScalar());
+            }
+            catch(Exception exception){
+                Console.WriteLine(exception.Message);
+            }
+            finally{
+                
+            }  
+            return totalAmount;
         }
 
         public static string? isValidUser(NewEmployee employee){

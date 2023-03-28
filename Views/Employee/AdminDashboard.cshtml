@@ -23,17 +23,12 @@
 
 }
 .boxfunc2{
-    width: 1300px;
-    height: 500px;
-    background-color: rgb(39, 36, 38);
-    border-radius: 1em;
-    align-items: center;
-    flex-direction: center;
-    justify-content: center;
-    padding-left: 3em;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 20px 20px 30px black;  
+ background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2); 
 
 }
 
@@ -47,7 +42,6 @@
   height: 110px;
   width: 23vw;
 }
-
 
 
 </style>
@@ -105,7 +99,7 @@
 
 
         <div class="boxfunc">
-          <h4 style="color:white;"><img src="https://cdn-icons-png.flaticon.com/512/9531/9531112.png" width="40" height="40">Payments</h4>
+          <a asp-controller="Employee" asp-action="PaymentDetails"><h4 style="color:white;"></h4><img src="https://cdn-icons-png.flaticon.com/512/9531/9531112.png" width="40" height="40">Payments</h4></a>
           <p style="color:white">Initiate payment for a user.</p> 
         </div>
       </div>

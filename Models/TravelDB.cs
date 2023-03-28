@@ -36,7 +36,7 @@ namespace EmpManage.Models
                     
                     using(SqlConnection connection=new SqlConnection("Data Source=ASPIRE1879\\SQLEXPRESS;Initial Catalog=userDetails;Integrated Security=SSPI"))
                     {
-                        SqlCommand command=new SqlCommand($"insert into expsTable values('{Convert.ToString(travel.expense)}','{Convert.ToString(travel.expdate)}','{Convert.ToString(travel.cost)}','{Convert.ToString(travel.currency)}',@value, 'pending')",connection);
+                        SqlCommand command=new SqlCommand($"insert into expenseTable values('{Convert.ToString(travel.employeeID)}','{Convert.ToString(travel.expense)}','{Convert.ToString(travel.expdate)}','{Convert.ToString(travel.cost)}','{Convert.ToString(travel.currency)}',@value, 'pending')",connection);
                         command.Parameters.AddWithValue("@value",travel.imageUrl);
                         connection.Open();
                         command.ExecuteNonQuery();
@@ -54,7 +54,7 @@ namespace EmpManage.Models
             {
                 using(SqlConnection connection=new SqlConnection(getConnection()))
                 {
-                    SqlCommand command=new SqlCommand($"UPDATE expsTable SET approval='{approvalstatus}' WHERE exp_no='{exp_number}'",connection);
+                    SqlCommand command=new SqlCommand($"UPDATE expenseTable SET approval='{approvalstatus}' WHERE exp_no='{exp_number}'",connection);
                     connection.Open();
                     command.ExecuteNonQuery();
                 }
