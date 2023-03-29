@@ -1,6 +1,54 @@
 @model NewEmployee
 @{
-    ViewData["Title"]="deletetionsuccessfull";
+    ViewData["Title"]="Successfull";
 }
-<h1 style="color: blueviolet;">Success</h1>
-<a asp-action="EmployeeDetails">View all Employes</a>
+<!DOCTYPE html>
+<html>
+@{
+    Layout = "~/Views/Shared/_Layoutwithonlylogo.cshtml";
+}
+<style>
+    label{
+        width: 8%;
+    }
+      button
+    {   
+        width: 70px;
+        height: 35px;
+        background-color: rgb(31, 30, 30);
+        border-radius: 1em;
+        align-items: left;
+        flex-direction: row;
+        justify-content: left;
+        margin-left: 13.5%;
+        margin-top: 1.5%;
+        
+    }
+    button:hover 
+    {
+        background-color:rgb(82, 21, 139);
+        cursor: pointer;
+    }
+
+    .boxfunc{
+        background-color: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        margin: 100px;
+        box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2); 
+    }
+
+</style>
+<div class="boxfunc">
+    <center>
+        <h2 style="color: black;">Delete an employee</h2>
+        <p>Deletion Successfull</p>
+        <a asp-action="EmployeeDetails">View all Employes</a>
+        <a asp-action="AdminDashboard">Go Back </a>
+    </center>
+</div>
+</html>
+

@@ -24,8 +24,11 @@ namespace EmpManage.Controllers
             return View(); 
         }
 
-        public IActionResult Dashboard(NewEmployee employee){
-            IEnumerable<object> dashBoardlist=Repository.dashBoard(employee);
+        public IActionResult Dashboard(NewEmployee employee)
+        {
+            string?  a = employee.employeeID;
+            ViewBag.message=a;
+            IEnumerable<object> dashBoardlist=Repository.dashBoard((HttpContext.Session.GetString("employeeId")));
             return View(dashBoardlist);
         }
 
@@ -42,13 +45,19 @@ namespace EmpManage.Controllers
 
         [HttpGet]
         public IActionResult toLogin()
-        {
+        {   
             return View(); 
         }
 
         [HttpPost]
         public IActionResult toLogin(NewEmployee employee)
         {   
+            var cookieOptions = new CookieOptions();
+            cookieOptions.Expires = DateTime.Now.AddDays(1);
+            Response.Cookies.Append("LastLoginTime",DateTime.Now.ToString(),cookieOptions);
+            Console.WriteLine(Request.Cookies["LastLoginTime"]);
+            TempData["Time"]="Last Login:"+Request.Cookies["LastLoginTime"];
+            
             string?  a = Repository.isValidUser(employee);
             if(a!="novalue")
             {
@@ -99,6 +108,13 @@ namespace EmpManage.Controllers
             DataTable employeedetails=Repository.displayUserDetails();
             return View("EmployeeDetails",employeedetails);
         }
+
+        public IActionResult ReimbursementStatus()
+        {   
+            DataTable employeedetails=Repository.displayExpenseDetails();
+            return View("ReimbursementStatus",employeedetails);
+        }
+
 
         public IActionResult ApproveReimbursements()
         {   

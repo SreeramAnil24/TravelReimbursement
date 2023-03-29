@@ -5,10 +5,10 @@
 
 <!DOCTYPE html>
 @model IEnumerable<object>
+<html lang="en">
 @{
     Layout = "~/Views/Shared/_Layoutwithonlylogo.cshtml";
 }
-<html lang="en">
 <head>
 
   <style>
@@ -31,7 +31,7 @@
   text-align: center;
   overflow: hidden;
   transition: 1.5s;
-  box-shadow: 20px 20px 30px rgb(9, 150, 126);  
+  box-shadow: 20px 20px 30px rgb(6, 80, 67);  
 
 }
 
@@ -59,8 +59,8 @@
   -moz-transition: background-color 2s ease-out;
   -o-transition: background-color 2s ease-out;
   transition: background-color 2s ease-out; *@
-  height: 90px;
-  width: 25vw;
+  height: 110px;
+  width: 23vw;
 }
 
 
@@ -70,7 +70,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<div class="lastlogin">@TempData["Time"]</div>
 <div>
   <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge" style="width:65px;left:0;position: fixed;">
       <a asp-controller="Employee" asp-action="Reimbursement" class="w3-bar-item w3-button"><img src="https://cdn-icons-png.flaticon.com/512/9484/9484175.png" title="Add a new Expense" width="40" height="40"></a>
@@ -85,8 +85,8 @@
     <div class="col-sm-9">
       <div>
         <center>
-        @* <h2>@ViewBag.message 's Dashboard</h2> *@
-<h4 style="color:white; font-family: 'Gloock', serif; font-size:30px; text-align:center"> User Dashboard:</h4><p style="color:white;">Check your Travel Reimbursement status here.</p>
+        <h2>@ViewBag.message 's Dashboard</h2>
+<h4 style="color:white; font-family: 'Gloock', serif; font-size:30px; text-align:center"> @ViewBag.message's User Dashboard:</h4><p style="color:white;">Check your Travel Reimbursement status here.</p>
         </center>
       </div>
       <div class="row">
@@ -109,7 +109,7 @@
 
       <div class="row" >
           <div class="boxfunc">       
-            <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/1122/1122163.png" width="40" height="40">Reimbursement's applied:</h4>
+            <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/1122/1122163.png" width="40" height="40">Reimbursements applied:</h4>
             <p style="color:white">@Model.ElementAt(3)</p> 
           </div>
 
@@ -119,9 +119,14 @@
           </div>
       
           <div class="boxfunc">  
-            <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/9264/9264010.png" width="40" height="40">Reimbursements Rejected:</h4>
+            <h4 style="color:white; font-family: 'Gloock', serif;"><img src="https://cdn-icons-png.flaticon.com/512/8727/8727689.png" width="40" height="40">Reimbursements Rejected:</h4>
             <p style="color:white">@Model.ElementAt(5)</p> 
           </div>
+
+          <div class="boxfunc" >
+          <a asp-controller="Employee" asp-action="ReimbursementStatus"><h4 style="color:white;"><img src="https://cdn-icons-png.flaticon.com/512/9264/9264010.png" width="40" height="40">Status</h4></a>
+          <p style="color:white">View your reimbursement status</p> 
+        </div>
       </div>
     </div>
   </div>

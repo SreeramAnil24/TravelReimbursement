@@ -17,15 +17,16 @@ namespace EmpManage.Models
         }
 
 
-        public static IEnumerable<object> dashBoard(NewEmployee employee)
+        public static IEnumerable<object> dashBoard(string employeeID)
         {   
-            Console.WriteLine(employee.employeeID);
+            Console.WriteLine(employeeID+"travel");
             List<object> itemList = new List<object>();
+            string? empID=employeeID;
             try{
                 using(SqlConnection connection=new SqlConnection(getConnection())){
-                    SqlCommand command1=new SqlCommand($"select toDestination from travelsTable where employeeID='{employee.employeeID}'",connection);
-                    SqlCommand command2=new SqlCommand($"select mediumofTravel from travelsTable where employeeID='{employee.employeeID}'",connection);
-                    SqlCommand command3=new SqlCommand($"select dateofTravel from travelsTable where employeeID='{employee.employeeID}'",connection);
+                    SqlCommand command1=new SqlCommand($"select toDestination from travelsTable where employeeID='{empID}'",connection);
+                    SqlCommand command2=new SqlCommand($"select mediumofTravel from travelsTable where employeeID='{empID}'",connection);
+                    SqlCommand command3=new SqlCommand($"select dateofTravel from travelsTable where employeeID='{empID}'",connection);
                     SqlCommand command4=new SqlCommand($"select count(*) from expenseTable",connection);
                     SqlCommand command5=new SqlCommand($"select COUNT(*) from expenseTable where approval='approved'",connection);
                     SqlCommand command6=new SqlCommand($"select COUNT(*) from expenseTable where approval='rejected'",connection);
@@ -131,7 +132,7 @@ namespace EmpManage.Models
             SqlConnection connection=new SqlConnection(getConnection());
             int totalAmount=0;
             try{
-                SqlCommand sumcommand=new SqlCommand($"select sum(cost) from expenseTable where approval='Approved' and employee_id='{employeeID}'",connection);
+                SqlCommand sumcommand=new SqlCommand($"select sum(cost) from expenseTable where approval='Approved'",connection);
                 connection.Open();
                 totalAmount=Convert.ToInt32(sumcommand.ExecuteScalar());
             }

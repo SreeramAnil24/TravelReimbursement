@@ -1,7 +1,7 @@
 @using System.Data;
 @model System.Data.DataTable;
 <style>
-.boxfunc{
+    .boxfunc{
  background-color: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   border-radius: 10px;
@@ -14,8 +14,8 @@ h3{
     text-align: center;
 }
 </style>
- @{
-    Layout = "~/Views/Shared/_Layoutwithnofooter.cshtml";
+@{
+    Layout = "~/Views/Shared/_Layoutwithonlylogo.cshtml";
 }
 
 <body>
@@ -59,26 +59,16 @@ h3{
                                         <td><img src=@imageDataURL width="50px" height="50px"></td>
                                     }
                                     <td>@datarow[7] &emsp; </td>
-                                    @* <td>@ViewBag.message</td> *@
-
-                                    
-                                    @* <td><div>
-                                        <a  href="@Url.Action("DoApprovals", "Employee", new { approvalstatus = "Approved", exp_number=@datarow[0] })"><img src = "https://cdn1.iconfinder.com/data/icons/business-700/48/Approved-512.png" width=40 height=40> 
-                                        <a  href="@Url.Action("DoApprovals", "Employee", new { approvalstatus = "Rejected", exp_number=@datarow[0] })"><img src="https://cdn4.iconfinder.com/data/icons/business-management-flat-9/24/reject_stamp_rejected_deny_refuse-512.png" width=40 height=40>
-                                    </div></td> *@
                                 </tr>
                             }
-                        
+    
                         }
                         </tbody>
                         
-                </table>  
-                        
+                </table>            
     </div>
     <div class="container">
-           
-        <a button asp-controller="Employee" asp-action="AdminDashboard" type="submit">Go back</button></a>
-        <p>Total amount to be debited=@ViewBag.message</p>  
+        <a button asp-controller="Employee" asp-action="Dashboard" type="submit">Go back</button></a>    
     </div>
 
     
